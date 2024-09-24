@@ -14,6 +14,7 @@ export default function HomePage() {
         </Link>{' '}
         and see the documentation.
       </p>
+      这是首页
     </main>
   );
 }
