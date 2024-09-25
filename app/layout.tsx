@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import './global.css';
 
 const inter = Inter({
-  subsets: ['latin']
+  subsets: ['latin'],
 });
 
 interface LayoutProps {
@@ -13,7 +13,11 @@ interface LayoutProps {
 
 export default function Layout({ children, params }: LayoutProps) {
   return (
-    <html lang={params.lang} className={inter.className} suppressHydrationWarning>
+    <html
+      lang={params.lang}
+      className={inter.className}
+      suppressHydrationWarning
+    >
       <body>{children}</body>
     </html>
   );

@@ -18,8 +18,8 @@ export default function Layout({ children, params }: LayoutProps) {
       translations={
         {
           zh: {
-            search: '搜索'
-          }
+            search: '搜索',
+          },
         }[params.lang]
       }
     >
