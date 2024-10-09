@@ -1,9 +1,7 @@
-import type { ReactNode } from 'react';
-import { HomeLayout } from 'fumadocs-ui/home-layout';
-import { baseOptions } from '@/app/layout.config';
-import { I18nProvider } from 'fumadocs-ui/i18n';
 import { locales } from '@/app/i18n';
+import { I18nProvider } from 'fumadocs-ui/i18n';
 import { RootProvider } from 'fumadocs-ui/provider';
+import type { ReactNode } from 'react';
 
 interface LayoutProps {
   params: { lang: string };
@@ -23,9 +21,7 @@ export default function Layout({ children, params }: LayoutProps) {
         }[params.lang]
       }
     >
-      <RootProvider>
-        <HomeLayout {...baseOptions}>{children}</HomeLayout>
-      </RootProvider>
+      <RootProvider>{children}</RootProvider>
     </I18nProvider>
   );
 }

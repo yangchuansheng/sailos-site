@@ -1,5 +1,5 @@
 import { type HomeLayoutProps } from 'fumadocs-ui/home-layout';
-
+import { LANGUAGES } from './i18n';
 /**
  * Shared layout configurations
  *
@@ -7,17 +7,42 @@ import { type HomeLayoutProps } from 'fumadocs-ui/home-layout';
  * Home Layout: app/(home)/layout.tsx
  * Docs Layout: app/docs/layout.tsx
  */
-export const baseOptions: HomeLayoutProps = {
-  i18n: true,
-  nav: {
-    title: 'Sailos'
-  },
-  githubUrl: 'https://github.com/zjy365/sailos-site',
-  links: [
-    {
-      text: 'Documentation',
-      url: '/docs',
-      active: 'nested-url'
-    }
-  ]
-};
+export const baseOptions: Record<(typeof LANGUAGES)[number], HomeLayoutProps> =
+  {
+    en: {
+      i18n: true,
+      nav: {
+        title: 'Sailos',
+        url: '/en',
+      },
+      githubUrl: 'https://github.com/zjy365/sailos-site',
+      links: [
+        {
+          text: 'Documentation',
+          url: '/docs',
+          active: 'nested-url',
+        },
+      ],
+    },
+    zh: {
+      i18n: true,
+      nav: {
+        title: 'Sailos-zh',
+        url: '/zh',
+      },
+      githubUrl: 'https://github.com/zjy365/sailos-site',
+      links: [
+        {
+          text: '文档',
+          url: '/docs',
+          active: 'nested-url',
+        },
+      ],
+    },
+  };
+
+export function getOptionsForLanguage(
+  lang: (typeof LANGUAGES)[number],
+): HomeLayoutProps {
+  return baseOptions[lang];
+}

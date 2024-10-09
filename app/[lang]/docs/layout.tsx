@@ -4,7 +4,7 @@ import { I18nProvider } from 'fumadocs-ui/i18n';
 import { DocsLayout } from 'fumadocs-ui/layout';
 import { RootProvider } from 'fumadocs-ui/provider';
 import type { ReactNode } from 'react';
-import { baseOptions } from '../../layout.config';
+import { getOptionsForLanguage } from '@/app/layout.config';
 
 interface LayoutProps {
   params: { lang: string };
@@ -19,13 +19,16 @@ export default function Layout({ children, params }: LayoutProps) {
       translations={
         {
           zh: {
-            search: '搜索'
-          }
+            search: '搜索',
+          },
         }[params.lang]
       }
     >
       <RootProvider>
-        <DocsLayout tree={source.pageTree[params.lang]} {...baseOptions}>
+        <DocsLayout
+          tree={source.pageTree[params.lang]}
+          {...getOptionsForLanguage(params.lang)}
+        >
           {children}
         </DocsLayout>
       </RootProvider>

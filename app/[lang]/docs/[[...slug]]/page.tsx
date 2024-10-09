@@ -5,9 +5,11 @@ import {
   DocsBody,
   DocsTitle,
   DocsDescription,
+  DocsCategory,
 } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
+import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 
 export default async function Page({
   params,
@@ -20,7 +22,13 @@ export default async function Page({
   const MDX = page.data.body;
 
   return (
-    <DocsPage toc={page.data.toc}>
+    <DocsPage
+      toc={page.data.toc}
+      tableOfContent={{
+        style: 'clerk',
+        single: false,
+      }}
+    >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
