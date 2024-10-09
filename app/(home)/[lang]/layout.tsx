@@ -1,4 +1,5 @@
 import { locales } from '@/app/i18n';
+import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { I18nProvider } from 'fumadocs-ui/i18n';
 import { RootProvider } from 'fumadocs-ui/provider';
 import type { ReactNode } from 'react';
@@ -21,7 +22,10 @@ export default function Layout({ children, params }: LayoutProps) {
         }[params.lang]
       }
     >
-      <RootProvider>{children}</RootProvider>
+      <RootProvider>
+        {children}
+        <TailwindIndicator />
+      </RootProvider>
     </I18nProvider>
   );
 }

@@ -2,7 +2,7 @@ import { env } from '@/env.mjs';
 import { SiteConfig } from '@/types';
 
 export const siteConfig: SiteConfig = {
-  name: 'sailos',
+  name: 'Sailos',
   author: 'zjy365',
   description: 'sailos',
   keywords: ['sailos', 'Next.js'],

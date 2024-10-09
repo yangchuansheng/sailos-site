@@ -1,6 +1,5 @@
+import Example from '@/components/feature/example';
 import Header from '@/components/header';
-import Link from 'fumadocs-core/link';
-import React from 'react';
 
 export const Frame2 = () => {
   return (
@@ -58,9 +57,17 @@ export const Frame = () => {
 
 export default function HomePage({ params }: { params: { lang: string } }) {
   return (
-    <main className="flex h-screen flex-col justify-center text-center">
+    <main className="h-full bg-[#EBF2FF]">
       <Header />
-      <Link href={`/${params.lang}/docs`}>docs</Link>
+
+      {/* <div className="h-[400px] bg-[#99E0FFB2] blur-[200px]">123 312</div> */}
+      <div className="pt-[600px]"></div>
+      <div className="custom-container  pt-14">
+        <Example />
+      </div>
+
+      <div className="h-[1000px]"></div>
+      <div className="h-[1000px]"></div>
     </main>
   );
 }

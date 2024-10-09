@@ -2,10 +2,34 @@
 
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
+import { ArrowRightIcon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 import Link from 'fumadocs-core/link';
 import Image from 'next/image';
 import { useState } from 'react';
+
+const links = [
+  {
+    text: 'App Store',
+    url: '/app-store',
+  },
+  {
+    text: 'Docs',
+    url: '/docs',
+  },
+  {
+    text: 'Pricing',
+    url: '/pricing',
+  },
+  {
+    text: 'Blog',
+    url: '/blog',
+  },
+  {
+    text: 'Contact',
+    url: '/contact',
+  },
+];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,16 +44,12 @@ export default function Header() {
     <div
       className={cn(
         'fixed top-0 z-50 w-full',
-        hasScrolled ? 'bg-neutral-50 shadow-lg dark:bg-neutral-900' : '',
+        hasScrolled ? 'bg-[#EBF2FF] shadow-header' : '',
       )}
     >
-      <nav className={cn('container relative mx-auto')}>
-        <div
-          className={cn(
-            'flex w-full justify-between px-4 py-2 sm:px-6 lg:px-8',
-          )}
-        >
-          <div className="flex items-center md:gap-x-12">
+      <nav className={cn('custom-container-header relative text-black')}>
+        <div className={cn('flex w-full justify-between py-[10px]')}>
+          <div className="flex items-center md:gap-x-9">
             <Link
               href="/"
               aria-label={siteConfig.name}
@@ -38,15 +58,33 @@ export default function Header() {
             >
               <Image
                 alt={siteConfig.name}
-                src="/logo.svg"
-                className="h-8 w-8"
-                width={32}
-                height={32}
+                src="logo.svg"
+                className="h-7 w-7"
+                width={28}
+                height={28}
               />
-              <span className="hidden md:block">{siteConfig.name}</span>
+              <span className="hidden text-xl font-bold md:block">
+                {siteConfig.name}
+              </span>
             </Link>
+            <div className="hidden items-center gap-x-6 text-sm font-medium md:flex">
+              {links.map((link) => (
+                <Link key={link.text} href={link.url}>
+                  {link.text}
+                </Link>
+              ))}
+            </div>
           </div>
-          <div className="hidden items-center gap-x-6 md:flex">123</div>
+
+          <div className="flex items-center gap-4 text-sm font-medium">
+            <div className="">Login</div>
+            <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-custom-bg py-2 pl-4 pr-3 text-custom-primary-text">
+              Get Started
+              <ArrowRightIcon className="relative h-4 w-4" />
+            </div>
+          </div>
+
+          {/* phone menu */}
           <div className="md:hidden">
             <button
               aria-label="Open Menu"
@@ -54,11 +92,11 @@ export default function Header() {
               className="focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50 -mr-1 rounded p-2 transition duration-200 focus:outline-none"
               onClick={() => setIsMenuOpen(true)}
             >
-              123
+              <HamburgerMenuIcon />
             </button>
             {isMenuOpen && (
               <div className="absolute left-0 top-0 z-50 w-full">
-                <div className="bg-background rounded border p-5 shadow-sm">
+                <div className="rounded border bg-background p-5 shadow-sm">
                   <div className="mb-4 flex items-center justify-between">
                     <div>
                       <Link
