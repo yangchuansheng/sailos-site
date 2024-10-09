@@ -31,8 +31,8 @@ const StarIcon = () => (
     fill="none"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M11.7889 3.48313C12.234 2.25042 13.9773 2.25041 14.4224 3.48312L16.4035 8.9696L21.8601 10.966C23.0853 11.4144 23.0853 13.1473 21.8601 13.5956L16.4035 15.592L14.4224 21.0785C13.9773 22.3112 12.234 22.3112 11.7889 21.0785L9.8078 15.592L4.35124 13.5956C3.12597 13.1473 3.12597 11.4144 4.35124 10.966L9.8078 8.9696L11.7889 3.48313ZM13.1057 5.72527L11.5938 9.91229C11.4531 10.3019 11.1471 10.6092 10.7581 10.7516L6.57849 12.2808L10.7581 13.81C11.1471 13.9524 11.4531 14.2597 11.5938 14.6493L13.1057 18.8363L14.6175 14.6493C14.7582 14.2597 15.0642 13.9524 15.4533 13.81L19.6328 12.2808L15.4533 10.7516C15.0642 10.6092 14.7582 10.3019 14.6175 9.91229L13.1057 5.72527Z"
       fill="url(#paint0_linear_319_31)"
     />
@@ -53,8 +53,8 @@ const StarIcon = () => (
         y2="22.003"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#A1D3F6" />
-        <stop offset="1" stop-color="#52A7E3" />
+        <stop stopColor="#A1D3F6" />
+        <stop offset="1" stopColor="#52A7E3" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_319_31"
@@ -64,8 +64,8 @@ const StarIcon = () => (
         y2="22.003"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#A1D3F6" />
-        <stop offset="1" stop-color="#52A7E3" />
+        <stop stopColor="#A1D3F6" />
+        <stop offset="1" stopColor="#52A7E3" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_319_31"
@@ -75,8 +75,8 @@ const StarIcon = () => (
         y2="22.003"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#A1D3F6" />
-        <stop offset="1" stop-color="#52A7E3" />
+        <stop stopColor="#A1D3F6" />
+        <stop offset="1" stopColor="#52A7E3" />
       </linearGradient>
     </defs>
   </svg>

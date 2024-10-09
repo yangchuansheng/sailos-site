@@ -67,7 +67,7 @@ export default function Header() {
                 {siteConfig.name}
               </span>
             </Link>
-            <div className="hidden items-center gap-x-6 text-sm font-medium md:flex">
+            <div className="hidden items-center gap-x-6 text-sm font-medium lg:flex">
               {links.map((link) => (
                 <Link key={link.text} href={link.url}>
                   {link.text}
@@ -76,7 +76,7 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4 text-sm font-medium">
+          <div className="hidden items-center gap-4 text-sm font-medium lg:flex">
             <div className="">Login</div>
             <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-custom-bg py-2 pl-4 pr-3 text-custom-primary-text">
               Get Started
@@ -94,6 +94,7 @@ export default function Header() {
             >
               <HamburgerMenuIcon />
             </button>
+
             {isMenuOpen && (
               <div className="absolute left-0 top-0 z-50 w-full">
                 <div className="rounded border bg-background p-5 shadow-sm">
