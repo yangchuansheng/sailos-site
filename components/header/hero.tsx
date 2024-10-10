@@ -1,12 +1,30 @@
 import { cn } from '@/lib/utils';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
+import dynamic from 'next/dynamic';
 import AnimatedGridPattern from '../ui/animated-grid-pattern';
 import TypingAnimation from '../ui/typing-animation';
-import { ArrowRightIcon } from '@radix-ui/react-icons';
+
+const DynamicVideo = dynamic(() => import('./video'), {
+  ssr: false,
+  loading: () => (
+    <div className="z-10 mx-16 mt-10 flex items-center justify-center">
+      <img
+        src="/images/video-thumbnail.png"
+        alt="video-thumbnail"
+        className="h-full w-full max-w-[1046px] rounded-xl object-cover"
+        style={{
+          boxShadow:
+            '0px 32px 64px -20px rgba(0, 91, 129, 0.20), 0px 0px 1px 0px rgba(19, 51, 107, 0.20)',
+        }}
+      />
+    </div>
+  ),
+});
 
 export default function Hero() {
   return (
     <div className="relative">
-      <div className="relative flex h-[1008px] w-full flex-col overflow-hidden rounded-lg pt-20">
+      <div className="relative flex min-h-[1000px] w-full flex-col overflow-hidden rounded-lg py-20">
         <div className="z-10 whitespace-pre-wrap text-center tracking-tighter text-black dark:text-white">
           <TypingAnimation
             className="text-[80px] font-bold"
@@ -30,14 +48,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="z-10 mx-16 mt-10 flex items-center justify-center">
-          <video
-            src="https://objectstorageapi.usw.sailos.io/yzxbv756-sailos/sailos-devbox.mp4"
-            controls
-            muted
-            className="max-w-[1046px]"
-          ></video>
-        </div>
+        <DynamicVideo />
 
         <AnimatedGridPattern
           width={72}
@@ -53,7 +64,8 @@ export default function Hero() {
           )}
         />
       </div>
-      <div className="z-1 absolute bottom-0  h-[400px] w-full bg-[#99E0FFB2] blur-[200px]"></div>
+
+      <div className="z-1 absolute bottom-32  h-[400px] w-full bg-[#99E0FFB2] blur-[200px]"></div>
     </div>
   );
 }
