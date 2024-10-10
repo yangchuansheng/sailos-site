@@ -78,7 +78,7 @@ export default function Header() {
 
           <div className="hidden items-center gap-4 text-sm font-medium lg:flex">
             <div className="">Login</div>
-            <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-custom-bg py-2 pl-4 pr-3 text-custom-primary-text">
+            <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-custom-bg py-2 pl-4 pr-3 text-custom-primary-text shadow-button">
               Get Started
               <ArrowRightIcon className="relative h-4 w-4" />
             </div>

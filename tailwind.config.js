@@ -60,7 +60,8 @@ export default {
 			},
 			boxShadow: {
 				header: '0px 4px 40px -12px rgba(19, 51, 107, 0.20), 0px 0px 1px 0px rgba(19, 51, 107, 0.20)',
-				'example-card': '0px 10px 30px -10px rgba(6, 26, 65, 0.05), 0px 0px 1px 0px rgba(19, 51, 107, 0.20)'
+				'example-card': '0px 10px 30px -10px rgba(6, 26, 65, 0.05), 0px 0px 1px 0px rgba(19, 51, 107, 0.20)',
+				'button': "0px 4px 4px 0px rgba(0, 103, 198, 0.15), 0px 0px 1px 0px rgba(19, 51, 107, 0.08)"
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
