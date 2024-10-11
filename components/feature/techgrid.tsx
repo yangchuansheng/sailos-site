@@ -86,8 +86,6 @@ export default function TechGrid() {
     setActiveTab(tab);
   }, []);
 
-  console.log(mockData[activeTab as keyof typeof mockData]);
-
   return (
     <div className="mt-52">
       <div className="mb-16 text-center text-4xl font-bold text-black">

@@ -3,6 +3,7 @@ import { ArrowRightIcon } from '@radix-ui/react-icons';
 import dynamic from 'next/dynamic';
 import AnimatedGridPattern from '../ui/animated-grid-pattern';
 import TypingAnimation from '../ui/typing-animation';
+import Image from 'next/image';
 
 const DynamicVideo = dynamic(() => import('./video'), {
   ssr: false,
@@ -24,10 +25,32 @@ const DynamicVideo = dynamic(() => import('./video'), {
 export default function Hero() {
   return (
     <div className="relative">
+      <Image
+        className="absolute left-28 top-28 z-10"
+        src="/icons/header-1.svg"
+        alt="hero-bg"
+        width={136}
+        height={100}
+      />
+      <Image
+        className="absolute -top-8 right-64 z-10"
+        src="/icons/header-2.svg"
+        alt="hero-bg"
+        width={181}
+        height={115}
+      />
+      <Image
+        className="absolute right-36 top-[330px] z-10"
+        src="/icons/header-3.svg"
+        alt="hero-bg"
+        width={153}
+        height={92}
+      />
+
       <div className="relative flex min-h-[1000px] w-full flex-col overflow-hidden rounded-lg py-20">
         <div className="z-10 whitespace-pre-wrap text-center tracking-tighter text-black dark:text-white">
           <TypingAnimation
-            className="text-[80px] font-bold"
+            className="text-[80px] font-bold leading-[97px]"
             text="Sailos DevBox"
           />
           <div className="mx-auto my-6 max-w-[600px] text-base font-medium text-custom-secondary-text">
