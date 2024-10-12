@@ -1,5 +1,6 @@
 import Example from '@/components/feature/example';
 import Feature from '@/components/feature/feature';
+import { StickyBox } from '@/components/feature/sticky-box';
 import TechGrid from '@/components/feature/techgrid';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
@@ -12,11 +13,10 @@ export default function HomePage({ params }: { params: { lang: string } }) {
       <main className="custom-container pt-14">
         <Hero />
         <TechGrid />
-        <div className="h-[1000px]"></div>
-        <Example />
+        <StickyBox />
         <Feature />
-        {/* <Feature />
-        <Footer /> */}
+        <Example />
+        {/* <Footer /> */}
       </main>
 
       <div className="rounded-[20px]"></div>
