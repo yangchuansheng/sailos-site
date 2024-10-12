@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import { DatabaseIcon, SailosIcon, ObjectStorageIcon } from '../ui/icons';
 import Image from 'next/image';
 
@@ -28,18 +29,44 @@ const features2 = [
     description:
       'Collaborate Effortlessly! All team members can access the same Devbox environment, sharing code repositories, configuration files, and test data for seamless project development in the cloud. This significantly reduces the need for complex environment coordination, accelerating your development process and boosting team productivity.',
     icon: '🛡️',
+    image: '/images/foundation-2-1.svg',
   },
   {
     title: 'Unmatched Performance',
     description:
       'Our custom-built lightweight load balancer can handle massive clusters of tens of thousands of nodes, providing unparalleled performance.',
     icon: '🚀',
+    image: '/images/foundation-2-2.svg',
   },
   {
     title: 'Access from Any Network',
     description:
       'Devbox provides both intranet and Internet access addresses, with automated SSL certificate provisioning for enhanced security and flexibility. This empowers developers to work seamlessly across networks while maintaining a secure connection.',
     icon: '🌐',
+    image: '/images/foundation-2-3.svg',
+  },
+];
+
+const performanceStats = [
+  {
+    icon: '/images/efficient-1.svg',
+    percentage: '90%',
+    description: 'Cost Reduction',
+  },
+  {
+    icon: '/images/efficient-2.svg',
+    percentage: '500%',
+    description: 'Performance Improvement',
+  },
+  {
+    icon: '/images/efficient-3.svg',
+    percentage: '99.99999%',
+    description: 'Extremely Stable',
+  },
+  {
+    icon: '/images/efficient-4.svg',
+    percentage: '100%',
+    description: 'Safety Protection',
   },
 ];
 
@@ -49,74 +76,92 @@ export default function Feature() {
       <div className="text-center text-4xl font-bold text-black">
         The Foundation for Your Data Success
       </div>
-      <div className="mt-16 flex justify-center space-x-8">
+
+      <div className="mt-16 flex justify-center gap-6">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="flex h-[424px] w-1/3 flex-col justify-between rounded-lg bg-white shadow-md"
+            className="flex w-1/3 flex-col justify-between rounded-lg bg-white shadow-md"
           >
             <div className="flex  gap-4 p-6 pb-0">
-              <div className="mb-4 text-5xl">{feature.icon}</div>
+              <div className="text-5xl">{feature.icon}</div>
               <div className="flex flex-col gap-2">
-                <h3 className="mb-2 text-lg font-semibold">{feature.title}</h3>
-                <p className="mb-4 text-custom-secondary-text">
+                <h3 className="text-lg font-semibold">{feature.title}</h3>
+                <p className="mb-4 text-xs text-custom-secondary-text">
                   {feature.description}
                 </p>
               </div>
             </div>
-            <div className="overflow-hidden rounded-lg">
+            <div className="relative flex-1 overflow-hidden rounded-lg">
               <Image
-                src={`/images/feature-${index + 1}.png`}
+                src={`/images/foundation-${index + 1}.svg`}
                 alt={feature.title}
-                width={300}
-                height={160}
-                layout="responsive"
-                objectFit="cover"
+                width={411}
+                height={285}
+                className="z-10 h-full w-full object-cover"
+              />
+              {index === 1 && (
+                <div className="absolute left-1/2 top-1/2 h-[75px] w-[250px] -translate-x-1/2 -translate-y-1/2 bg-[#3DA7FF66] blur-[100px]">
+                  123
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-[140px] flex flex-col gap-16">
+        {features2.map((feature, index) => (
+          <div
+            key={index}
+            className={cn(
+              'flex h-[350px] gap-16 text-right',
+              index === 1 && 'flex-row-reverse text-left',
+            )}
+          >
+            <div className="relative w-1/2 rounded border border-dashed border-[#9DCBE6] p-4">
+              <Image
+                src={feature.image}
+                alt={feature.title}
+                fill
+                className="object-contain"
               />
             </div>
+            <div className="flex w-1/2 flex-col justify-center">
+              <h3 className="mb-5 text-[28px] font-bold">{feature.title}</h3>
+              <p className="text-base font-medium text-custom-secondary-text">
+                {feature.description}
+              </p>
+            </div>
           </div>
         ))}
       </div>
 
-      {/* <div className="grid grid-cols-2 gap-8">
-        {features2.map((feature, index) => (
-          <div key={index} className="rounded-lg bg-white p-6 shadow-md">
-            <div className="mb-4 flex items-start">
-              <div className="mr-4 text-4xl">{feature.icon}</div>
-              <div>
-                <h3 className="mb-2 text-xl font-semibold">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            </div>
-            {index === 1 && (
-              <div className="mt-4">
-                <Image
-                  src="/images/sailos-architecture.png"
-                  alt="Sailos Architecture"
-                  width={400}
-                  height={200}
-                  layout="responsive"
-                  objectFit="contain"
-                />
-              </div>
-            )}
-            {index === 2 && (
-              <div className="mt-4 rounded-lg bg-gray-100 p-4">
-                <p className="text-sm">You can customize the domain name.</p>
-                <div className="mt-2 flex items-center rounded bg-white p-2">
-                  <span className="mr-2 text-blue-500">🔗</span>
-                  <span>xxx.sailos.io</span>
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
-      </div> */}
-
-      <div className="text-center text-4xl font-bold text-black">
+      <div className="mt-[200px] text-center text-4xl font-bold text-black">
         Discover How Efficient Your Team Could Be
       </div>
-      <div></div>
+      <div className="mt-16 flex items-center justify-between rounded border border-dashed border-[#9DCBE6] px-20 py-9">
+        {performanceStats.map((stat, index) => (
+          <div key={index} className="flex items-center">
+            <div>
+              <Image
+                src={stat.icon}
+                alt={stat.description}
+                width={80}
+                height={80}
+              />
+            </div>
+            <div className="flex flex-col">
+              <div className="text-[28px] font-bold text-black">
+                {stat.percentage}
+              </div>
+              <div className="text-sm font-medium text-custom-secondary-text">
+                {stat.description}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -15,7 +15,7 @@ const links = [
   },
   {
     text: 'Docs',
-    url: '/docs',
+    url: '/en/docs',
   },
   {
     text: 'Pricing',
@@ -31,7 +31,7 @@ const links = [
   },
 ];
 
-export default function Header() {
+export default function Header({ lang }: { lang: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -51,7 +51,7 @@ export default function Header() {
         <div className={cn('flex w-full justify-between py-[10px]')}>
           <div className="flex items-center md:gap-x-9">
             <Link
-              href="/"
+              href={'/'}
               aria-label={siteConfig.name}
               title={siteConfig.name}
               className="flex items-center gap-2 font-bold"

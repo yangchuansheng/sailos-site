@@ -9,18 +9,18 @@ import Hero from '@/components/header/hero';
 export default function HomePage({ params }: { params: { lang: string } }) {
   return (
     <div className="h-full bg-[#EBF2FF]">
-      <Header />
+      <Header lang={params.lang} />
       <main className="custom-container pt-14">
         <Hero />
         <TechGrid />
         <StickyBox />
         <Feature />
         <Example />
-        {/* <Footer /> */}
       </main>
-
-      <div className="rounded-[20px]"></div>
-      <div className="h-[1000px]"></div>
+      <div className="mt-[140px] h-[1px] bg-[#DDE7F7]"></div>
+      <div className="custom-container">
+        <Footer />
+      </div>
     </div>
   );
 }

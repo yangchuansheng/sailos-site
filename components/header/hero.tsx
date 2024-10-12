@@ -27,24 +27,27 @@ export default function Hero() {
     <div className="relative">
       <Image
         className="absolute left-28 top-28 z-10"
-        src="/icons/header-1.svg"
+        src="/images/header-1.svg"
         alt="hero-bg"
         width={136}
         height={100}
+        style={{ width: '136px', height: '100px' }}
       />
       <Image
         className="absolute -top-8 right-64 z-10"
-        src="/icons/header-2.svg"
+        src="/images/header-2.svg"
         alt="hero-bg"
         width={181}
         height={115}
+        style={{ width: '181px', height: '115px' }}
       />
       <Image
         className="absolute right-36 top-[330px] z-10"
-        src="/icons/header-3.svg"
+        src="/images/header-3.svg"
         alt="hero-bg"
         width={153}
         height={92}
+        style={{ width: '153px', height: '92px' }}
       />
 
       <div className="relative flex min-h-[1000px] w-full flex-col overflow-hidden rounded-lg py-20">
