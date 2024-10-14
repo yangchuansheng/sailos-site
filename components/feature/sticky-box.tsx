@@ -2,6 +2,7 @@
 import React from 'react';
 import StickyScroll from '../ui/sticky-scroll-reveal';
 import Image from 'next/image';
+import { AnimateElement } from '../ui/animated-wrapper';
 
 const content = [
   {
@@ -77,7 +78,9 @@ const content = [
 export function StickyBox() {
   return (
     <div className="relative mt-32">
-      <StickyScroll content={content} />
+      <AnimateElement type="slideUp">
+        <StickyScroll content={content} />
+      </AnimateElement>
     </div>
   );
 }

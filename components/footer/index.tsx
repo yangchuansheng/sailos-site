@@ -27,7 +27,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({
   <Link
     href={href}
     className={cn(
-      'text-sm font-semibold text-custom-secondary-text',
+      'hover:underline-decoration-4 hover:underline-color-[#005B9C] text-sm font-medium text-custom-secondary-text hover:text-[#005B9C] hover:underline hover:underline-offset-4',
       className,
     )}
   >
@@ -57,14 +57,14 @@ const Footer = async () => {
               <span className="text-xl font-bold">{siteConfig.name}</span>
             </Link>
           </div>
-          <div className="mt-3 text-sm font-semibold text-custom-secondary-text">
+          <div className="mt-3 text-sm font-medium text-custom-secondary-text">
             A cloud operating system based on the Kubernetes kernel
           </div>
         </div>
         <div className="mt-10 grid grid-cols-3 items-start gap-10 md:mt-0">
           <FooterLinkColumn>
             <FooterLink
-              className="text-base font-semibold uppercase text-black"
+              className="text-base font-semibold uppercase text-black hover:text-black hover:no-underline"
               href="/contact"
             >
               Product
@@ -77,7 +77,7 @@ const Footer = async () => {
           </FooterLinkColumn>
           <FooterLinkColumn>
             <FooterLink
-              className="text-base font-semibold uppercase text-black"
+              className="text-base font-semibold uppercase text-black hover:text-black hover:no-underline"
               href="/contact"
             >
               Developer
@@ -89,7 +89,7 @@ const Footer = async () => {
           </FooterLinkColumn>
           <FooterLinkColumn>
             <FooterLink
-              className="text-base font-semibold uppercase text-black"
+              className="text-base font-semibold uppercase text-black hover:text-black hover:no-underline"
               href="/contact"
             >
               Support

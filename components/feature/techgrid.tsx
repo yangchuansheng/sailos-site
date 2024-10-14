@@ -1,5 +1,6 @@
 'use client';
 import React, { useCallback, useState } from 'react';
+import { AnimateElement } from '../ui/animated-wrapper';
 
 const mockData = {
   Popular: [
@@ -88,63 +89,75 @@ export default function TechGrid() {
 
   return (
     <div className="mt-52">
-      <div className="mb-16 text-center text-4xl font-bold text-black">
-        Start a Sharable Environment in Seconds
-      </div>
-
-      {/* Tabs */}
-      <div className="mb-9 flex justify-center space-x-4 text-base font-medium">
-        {Object.keys(mockData).map((tab) => (
-          <button
-            key={tab}
-            className={`rounded-md px-2 py-1 ${
-              activeTab === tab
-                ? 'rounded-md bg-[#FAFCFF] text-black'
-                : 'text-custom-secondary-text hover:bg-[#FAFCFF]/80'
-            }`}
-            onClick={() => handleTabChange(tab)}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-
-      {/* Grid */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {mockData[activeTab as keyof typeof mockData].map((tech) => (
-          <div
-            key={tech.name}
-            className="flex gap-4 rounded-lg bg-white px-6 py-5 shadow-md"
-          >
-            <div className="text-4xl">{tech.icon}</div>
-            <div>
-              <h3 className="mb-1 text-lg font-medium text-black">
-                {tech.name}
-              </h3>
-              <p className="text-xs text-custom-secondary-text">
-                {tech.language}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="mt-14 flex justify-center">
-        <div
-          className="max-w-[760px] rounded-[46px] border border-solid border-[#ABE1FF] px-4 py-3 text-center text-sm font-medium text-custom-secondary-text"
-          style={{
-            background:
-              'linear-gradient(90deg, rgba(170, 229, 255, 0.30) 0%, rgba(170, 229, 255, 0.20) 100%)',
-          }}
-        >
-          Support for that can run on
-          <span className="px-1 text-[#008AB6]">
-            all programming languages and frameworks
-          </span>
-          the Linux platform, and support for
-          <span className="px-1 text-[#008AB6]">quick installation</span> of
-          less commonly used programming languages
+      <AnimateElement type="slideUp">
+        <div className="mb-16 text-center text-4xl font-bold text-black">
+          Start a Sharable Environment in Seconds
         </div>
-      </div>
+
+        {/* Tabs */}
+        <div className="mb-9 flex justify-center space-x-4 text-base font-medium">
+          {Object.keys(mockData).map((tab) => (
+            <button
+              key={tab}
+              className={`rounded-md px-2 py-1 ${
+                activeTab === tab
+                  ? 'rounded-md bg-[#FAFCFF] text-black'
+                  : 'text-custom-secondary-text hover:bg-[#FAFCFF]/80'
+              }`}
+              style={{
+                boxShadow:
+                  activeTab === tab
+                    ? '0px 4px 4px 0px rgba(19, 51, 107, 0.05), 0px 0px 1px 0px rgba(19, 51, 107, 0.08)'
+                    : '',
+              }}
+              onClick={() => handleTabChange(tab)}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {mockData[activeTab as keyof typeof mockData].map((tech) => (
+            <div
+              key={tech.name}
+              className="flex gap-4 rounded-lg bg-white px-6 py-5"
+              style={{
+                boxShadow:
+                  '0px 12px 40px -25px rgba(6, 26, 65, 0.20), 0px 0px 1px 0px rgba(19, 51, 107, 0.20)',
+              }}
+            >
+              <div className="text-4xl">{tech.icon}</div>
+              <div>
+                <h3 className="mb-1 text-lg font-medium text-black">
+                  {tech.name}
+                </h3>
+                <p className="text-xs text-custom-secondary-text">
+                  {tech.language}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-14 flex justify-center">
+          <div
+            className="max-w-[760px] rounded-[46px] border border-solid border-[#ABE1FF] px-4 py-3 text-center text-sm font-medium text-custom-secondary-text"
+            style={{
+              background:
+                'linear-gradient(90deg, rgba(170, 229, 255, 0.30) 0%, rgba(170, 229, 255, 0.20) 100%)',
+            }}
+          >
+            Support for that can run on
+            <span className="px-1 text-[#008AB6]">
+              all programming languages and frameworks
+            </span>
+            the Linux platform, and support for
+            <span className="px-1 text-[#008AB6]">quick installation</span> of
+            less commonly used programming languages
+          </div>
+        </div>
+      </AnimateElement>
     </div>
   );
 }

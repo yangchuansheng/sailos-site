@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils';
 import { DatabaseIcon, SailosIcon, ObjectStorageIcon } from '../ui/icons';
 import Image from 'next/image';
 import { MagicCard } from '../ui/magic-card';
+import { AnimateElement } from '../ui/animated-wrapper';
 
 const features = [
   {
@@ -74,92 +75,109 @@ const performanceStats = [
 export default function Feature() {
   return (
     <div className="mt-52">
-      <div className="text-center text-4xl font-bold text-black">
-        The Foundation for Your Data Success
-      </div>
+      <AnimateElement type="slideUp">
+        <div className="text-center text-4xl font-bold text-black">
+          The Foundation for Your Data Success
+        </div>
+      </AnimateElement>
 
-      <div className="mt-16 flex justify-center gap-6">
-        {features.map((feature, index) => (
-          <div
-            key={index}
-            className="relative flex w-1/3 flex-col justify-between rounded-lg bg-white shadow-md"
-          >
-            <div className="flex  gap-4 p-6 pb-0">
-              <div className="text-5xl">{feature.icon}</div>
-              <div className="flex flex-col gap-2">
-                <h3 className="text-lg font-semibold">{feature.title}</h3>
-                <p className="mb-4 text-xs text-custom-secondary-text">
-                  {feature.description}
-                </p>
+      <AnimateElement type="slideUp">
+        <div className="mt-16 flex justify-center gap-6">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="relative flex w-1/3 flex-col justify-between rounded-lg bg-white"
+              style={{
+                boxShadow:
+                  '0px 12px 40px -25px rgba(6, 26, 65, 0.20), 0px 0px 1px 0px rgba(19, 51, 107, 0.20)',
+              }}
+            >
+              <AnimateElement type="slideUp">
+                <div className="flex  gap-4 p-6 pb-0">
+                  <div className="text-5xl">{feature.icon}</div>
+                  <div className="flex flex-col gap-2">
+                    <h3 className="text-lg font-semibold">{feature.title}</h3>
+                    <p className="mb-4 text-xs text-custom-secondary-text">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </AnimateElement>
+              <div className="relative z-10 flex-1 overflow-hidden rounded-lg">
+                <AnimateElement type="slideUp" delay={0.6}>
+                  <Image
+                    src={`/images/foundation-${index + 1}.svg`}
+                    alt={feature.title}
+                    width={411}
+                    height={285}
+                    className="z-10 h-full w-full object-cover"
+                  />
+                </AnimateElement>
               </div>
+              {index === 1 && (
+                <div className="absolute left-1/2 top-2/3 z-0 h-[75px] w-[250px] -translate-x-1/2 -translate-y-1/2 bg-[#3DA7FF66] blur-[100px]"></div>
+              )}
             </div>
-            <div className="relative z-10 flex-1 overflow-hidden rounded-lg">
-              <Image
-                src={`/images/foundation-${index + 1}.svg`}
-                alt={feature.title}
-                width={411}
-                height={285}
-                className="z-10 h-full w-full object-cover"
-              />
-            </div>
-            {index === 1 && (
-              <div className="absolute left-1/2 top-2/3 z-0 h-[75px] w-[250px] -translate-x-1/2 -translate-y-1/2 bg-[#3DA7FF66] blur-[100px]"></div>
-            )}
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </AnimateElement>
 
       <div className="mt-[140px] flex flex-col gap-16">
         {features2.map((feature, index) => (
-          <div
-            key={index}
-            className={cn(
-              'flex h-[350px] gap-16 text-right',
-              index === 1 && 'flex-row-reverse text-left',
-            )}
-          >
-            <MagicCard
-              gradientColor="#9ADFFF66"
-              gradientSize={300}
-              className="relative w-1/2 rounded border border-dashed border-[#9DCBE6] bg-transparent"
+          <div key={index}>
+            <AnimateElement
+              className={cn(
+                'flex h-[350px] gap-16 text-right',
+                index === 1 && 'flex-row-reverse text-left',
+              )}
+              type="slideUp"
+              delay={[0.5, 0.6, 0.7][index]}
             >
-              <Image src={feature.image} alt={feature.title} fill />
-            </MagicCard>
-            <div className="flex w-1/2 flex-col justify-center">
-              <h3 className="mb-5 text-[28px] font-bold">{feature.title}</h3>
-              <p className="text-base font-medium text-custom-secondary-text">
-                {feature.description}
-              </p>
-            </div>
+              <MagicCard
+                gradientColor="#9ADFFF66"
+                gradientSize={300}
+                className="relative w-1/2 rounded border border-dashed border-[#9DCBE6] bg-transparent"
+              >
+                <Image src={feature.image} alt={feature.title} fill />
+              </MagicCard>
+              <div className="flex w-1/2 flex-col justify-center">
+                <h3 className="mb-5 text-[28px] font-bold">{feature.title}</h3>
+                <p className="text-base font-medium text-custom-secondary-text">
+                  {feature.description}
+                </p>
+              </div>
+            </AnimateElement>
           </div>
         ))}
       </div>
 
-      <div className="mt-[200px] text-center text-4xl font-bold text-black">
-        Discover How Efficient Your Team Could Be
-      </div>
-      <div className="mt-16 flex items-center justify-between rounded border border-dashed border-[#9DCBE6] px-20 py-9">
-        {performanceStats.map((stat, index) => (
-          <div key={index} className="flex items-center">
-            <div>
-              <Image
-                src={stat.icon}
-                alt={stat.description}
-                width={80}
-                height={80}
-              />
-            </div>
-            <div className="flex flex-col">
-              <div className="text-[28px] font-bold text-black">
-                {stat.percentage}
+      <AnimateElement type="slideUp">
+        <div className="mt-[200px] text-center text-4xl font-bold text-black">
+          Discover How Efficient Your Team Could Be
+        </div>
+        <div className="mt-16 flex items-center justify-between rounded border border-dashed border-[#9DCBE6] px-20 py-9">
+          {performanceStats.map((stat, index) => (
+            <div key={index} className="flex items-center">
+              <div>
+                <Image
+                  src={stat.icon}
+                  alt={stat.description}
+                  width={80}
+                  height={80}
+                />
               </div>
-              <div className="text-sm font-medium text-custom-secondary-text">
-                {stat.description}
+              <div className="flex flex-col">
+                <div className="text-[28px] font-bold text-black">
+                  {stat.percentage}
+                </div>
+                <div className="text-sm font-medium text-custom-secondary-text">
+                  {stat.description}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </AnimateElement>
     </div>
   );
 }

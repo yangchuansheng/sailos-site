@@ -117,7 +117,7 @@ export function GridPattern({
             d={`M.5 ${height}V.5H${width}`}
             fill="none"
             strokeDasharray={strokeDasharray}
-            stroke="#DBEDFB"
+            stroke="#cce4f7"
           />
         </pattern>
       </defs>

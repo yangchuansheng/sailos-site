@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import AnimatedGridPattern from '../ui/animated-grid-pattern';
 import TypingAnimation from '../ui/typing-animation';
 import Image from 'next/image';
+import { AnimateElement } from '../ui/animated-wrapper';
 
 const DynamicVideo = dynamic(() => import('./video'), {
   ssr: false,
@@ -56,22 +57,27 @@ export default function Hero() {
             className="text-[80px] font-bold leading-[97px]"
             text="Sailos DevBox"
           />
-          <div className="mx-auto my-6 max-w-[600px] text-base font-medium text-custom-secondary-text">
-            Development sandboxes, establish various programming language
-            environments and database dependencies with a single click in the
-            cloud, connect via IDE to streamline development environment setup
-            and automate deployment and releases.
-          </div>
+          <AnimateElement type="slideUp" delay={0.2} duration={0.6}>
+            <div
+              className="mx-auto my-6 max-w-[700px] text-base font-medium text-custom-secondary-text"
+              style={{ letterSpacing: '0.15px' }}
+            >
+              Development sandboxes, establish various programming language
+              environments and database dependencies with a single click in the
+              cloud, connect via IDE to streamline development environment setup
+              and automate deployment and releases.
+            </div>
 
-          <div className="flex items-center justify-center gap-4 text-base font-medium">
-            <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-custom-bg py-2 pl-5 pr-4 text-custom-primary-text shadow-button hover:bg-[#97D9FF]">
-              Get Started
-              <ArrowRight className="relative h-4 w-4" />
+            <div className="flex items-center justify-center gap-4 text-base font-medium">
+              <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-custom-bg py-2 pl-5 pr-4 text-custom-primary-text shadow-button hover:bg-[#97D9FF]">
+                Get Started
+                <ArrowRight className="relative h-4 w-4" />
+              </div>
+              <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-[#FAFCFF] px-5 py-2 text-custom-primary-text shadow-button hover:bg-[#F1F5FB]">
+                Contact Us
+              </div>
             </div>
-            <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-[#FAFCFF] px-5 py-2 text-custom-primary-text shadow-button hover:bg-[#F1F5FB]">
-              Contact Us
-            </div>
-          </div>
+          </AnimateElement>
         </div>
 
         <DynamicVideo />
@@ -81,16 +87,16 @@ export default function Hero() {
           height={72}
           numSquares={200}
           maxOpacity={0.5}
-          duration={2}
-          repeatDelay={1}
+          duration={1}
+          // repeatDelay={1}
           className={cn(
-            '[mask-image:radial-gradient(1008px_circle_at_center,white,transparent)]',
-            'inset-x-0 inset-y-[-30%] h-[200%]',
-            // 'bg-white',
+            '[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]',
+            // 'inset-x-0 inset-y-[-10%] h-[200%]',
+            // 'bg-[#cce4f7]',
+            'top-10 h-[600px]',
           )}
         />
       </div>
-
       <div className="z-1 absolute bottom-32  h-[400px] w-full bg-[#99E0FFB2] blur-[200px]"></div>
     </div>
   );

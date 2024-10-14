@@ -69,7 +69,11 @@ export default function Header({ lang }: { lang: string }) {
             </Link>
             <div className="hidden items-center gap-x-6 text-sm font-medium lg:flex">
               {links.map((link) => (
-                <Link key={link.text} href={link.url}>
+                <Link
+                  key={link.text}
+                  href={link.url}
+                  className="rounded-md px-2 py-1 hover:bg-[#0306070D]"
+                >
                   {link.text}
                 </Link>
               ))}
