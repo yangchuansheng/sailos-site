@@ -18,9 +18,7 @@ export default function HomePage({ params }: { params: { lang: string } }) {
         <Example />
       </main>
       <div className="mt-[140px] h-[1px] bg-[#DDE7F7]"></div>
-      <div className="custom-container">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }

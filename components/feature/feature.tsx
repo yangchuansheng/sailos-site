@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import { DatabaseIcon, SailosIcon, ObjectStorageIcon } from '../ui/icons';
 import Image from 'next/image';
+import { MagicCard } from '../ui/magic-card';
 
 const features = [
   {
@@ -81,7 +82,7 @@ export default function Feature() {
         {features.map((feature, index) => (
           <div
             key={index}
-            className="flex w-1/3 flex-col justify-between rounded-lg bg-white shadow-md"
+            className="relative flex w-1/3 flex-col justify-between rounded-lg bg-white shadow-md"
           >
             <div className="flex  gap-4 p-6 pb-0">
               <div className="text-5xl">{feature.icon}</div>
@@ -92,7 +93,7 @@ export default function Feature() {
                 </p>
               </div>
             </div>
-            <div className="relative flex-1 overflow-hidden rounded-lg">
+            <div className="relative z-10 flex-1 overflow-hidden rounded-lg">
               <Image
                 src={`/images/foundation-${index + 1}.svg`}
                 alt={feature.title}
@@ -100,12 +101,10 @@ export default function Feature() {
                 height={285}
                 className="z-10 h-full w-full object-cover"
               />
-              {index === 1 && (
-                <div className="absolute left-1/2 top-1/2 h-[75px] w-[250px] -translate-x-1/2 -translate-y-1/2 bg-[#3DA7FF66] blur-[100px]">
-                  123
-                </div>
-              )}
             </div>
+            {index === 1 && (
+              <div className="absolute left-1/2 top-2/3 z-0 h-[75px] w-[250px] -translate-x-1/2 -translate-y-1/2 bg-[#3DA7FF66] blur-[100px]"></div>
+            )}
           </div>
         ))}
       </div>
@@ -119,14 +118,13 @@ export default function Feature() {
               index === 1 && 'flex-row-reverse text-left',
             )}
           >
-            <div className="relative w-1/2 rounded border border-dashed border-[#9DCBE6] p-4">
-              <Image
-                src={feature.image}
-                alt={feature.title}
-                fill
-                className="object-contain"
-              />
-            </div>
+            <MagicCard
+              gradientColor="#9ADFFF66"
+              gradientSize={300}
+              className="relative w-1/2 rounded border border-dashed border-[#9DCBE6] bg-transparent"
+            >
+              <Image src={feature.image} alt={feature.title} fill />
+            </MagicCard>
             <div className="flex w-1/2 flex-col justify-center">
               <h3 className="mb-5 text-[28px] font-bold">{feature.title}</h3>
               <p className="text-base font-medium text-custom-secondary-text">

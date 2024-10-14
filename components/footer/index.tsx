@@ -3,6 +3,7 @@ import { siteConfig } from '@/config/site';
 import Link from 'fumadocs-core/link';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { DiscordIcon, FrameIcon, GithubIcon } from '../ui/icons';
 
 interface FooterLinkColumnProps {
   children: React.ReactNode;
@@ -36,7 +37,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({
 
 const Footer = async () => {
   return (
-    <div className="relative pb-32 pt-20">
+    <div className="custom-container relative pt-20">
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between text-sm sm:flex-row">
         <div>
           <div className="mb-4 mr-4 md:flex">
@@ -53,12 +54,10 @@ const Footer = async () => {
                 width={30}
                 height={30}
               />
-              <span className="text-xl font-bold text-custom-secondary-text">
-                {siteConfig.name}
-              </span>
+              <span className="text-xl font-bold">{siteConfig.name}</span>
             </Link>
           </div>
-          <div className="mt-3">
+          <div className="mt-3 text-sm font-semibold text-custom-secondary-text">
             A cloud operating system based on the Kubernetes kernel
           </div>
         </div>
@@ -100,6 +99,40 @@ const Footer = async () => {
             <FooterLink href="#">About Us</FooterLink>
             <FooterLink href="#">Contact Us</FooterLink>
           </FooterLinkColumn>
+        </div>
+      </div>
+
+      <div className="mt-16 h-[1px] w-full bg-[#DDE7F7]"></div>
+      <div className="flex justify-between pb-6 pl-2 pt-4">
+        <div className="flex items-center space-x-2 text-sm font-normal text-custom-secondary-text">
+          <Link href="/terms-of-service">Terms of Service</Link>
+          <Link href="/privacy-policy">Privacy Policy</Link>
+          <div>|</div>
+          <div>Copyright © 2024 Fumadocs. All rights reserved.</div>
+        </div>
+        <div className="flex space-x-4">
+          <Link
+            className="flex size-8 items-center justify-center rounded-full bg-[#FAFCFF] object-center hover:bg-[#1118240D]"
+            href="https://github.com"
+            aria-label="GitHub"
+          >
+            <GithubIcon />
+          </Link>
+
+          <Link
+            className="flex size-8 items-center justify-center rounded-full bg-[#FAFCFF] object-center hover:bg-[#1118240D]"
+            href="https://discord.com"
+            aria-label="Discord"
+          >
+            <DiscordIcon />
+          </Link>
+          <Link
+            className="flex size-8 items-center justify-center rounded-full bg-[#FAFCFF] object-center hover:bg-[#1118240D]"
+            href="https://twitter.com"
+            aria-label="Twitter"
+          >
+            <FrameIcon />
+          </Link>
         </div>
       </div>
     </div>

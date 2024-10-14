@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { ArrowRightIcon } from '@radix-ui/react-icons';
+import { ArrowRight, Menu } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import AnimatedGridPattern from '../ui/animated-grid-pattern';
 import TypingAnimation from '../ui/typing-animation';
@@ -64,11 +64,11 @@ export default function Hero() {
           </div>
 
           <div className="flex items-center justify-center gap-4 text-base font-medium">
-            <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-custom-bg py-2 pl-5 pr-4 text-custom-primary-text shadow-button">
+            <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-custom-bg py-2 pl-5 pr-4 text-custom-primary-text shadow-button hover:bg-[#97D9FF]">
               Get Started
-              <ArrowRightIcon className="relative h-4 w-4" />
+              <ArrowRight className="relative h-4 w-4" />
             </div>
-            <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-[#FAFCFF] px-5 py-2 text-custom-primary-text shadow-button">
+            <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-[#FAFCFF] px-5 py-2 text-custom-primary-text shadow-button hover:bg-[#F1F5FB]">
               Contact Us
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from '@radix-ui/react-icons';
+import { ArrowRight, Menu } from 'lucide-react';
 import Image from 'next/image';
 
 const data = [
@@ -101,22 +101,22 @@ export default function Example() {
         ))}
       </div>
       <div
-        className="mt-[100px] flex h-[312px] w-full rounded-[20px]"
+        className="mt-[100px] flex h-[312px] w-full justify-between rounded-[20px]"
         style={{
           background: 'linear-gradient(90deg, #D6EEFF 0%, #E1F3FF 100%)',
         }}
       >
         <div className="flex flex-col gap-16 pl-[72px] pt-[70px]">
-          <div className="text-[28px] font-bold text-black">
+          <div className="w-[535px] text-[28px] font-bold text-black">
             Start a New Development Environment in Seconds
           </div>
-          <div className="flex w-[94px] cursor-pointer items-center justify-center gap-[6px] rounded-md bg-[#FAFCFF] py-2 pl-5 pr-4 text-custom-primary-text shadow-button">
+          <div className="flex w-fit cursor-pointer items-center justify-center gap-[6px] rounded-md bg-[#FAFCFF] py-2 pl-5 pr-4 text-custom-primary-text shadow-button hover:bg-[#F1F5FB]">
             New Project
-            <ArrowRightIcon className="relative h-4 w-4" />
+            <ArrowRight className="relative h-4 w-4" />
           </div>
         </div>
-        <div className="relative z-10 flex-1">
-          <Image src="/images/example.jpeg" alt="Example" fill />
+        <div className="relative z-10  max-w-[535px] flex-1">
+          <Image src="/images/example.png" alt="Example" fill />
         </div>
       </div>
     </div>

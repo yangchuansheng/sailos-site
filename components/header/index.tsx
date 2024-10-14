@@ -2,9 +2,9 @@
 
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
-import { ArrowRightIcon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 import Link from 'fumadocs-core/link';
+import { ArrowRight, Menu } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -77,10 +77,9 @@ export default function Header({ lang }: { lang: string }) {
           </div>
 
           <div className="hidden items-center gap-4 text-sm font-medium lg:flex">
-            <div className="">Login</div>
-            <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-custom-bg py-2 pl-4 pr-3 text-custom-primary-text shadow-button">
+            <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-custom-bg py-2 pl-4 pr-3 text-custom-primary-text shadow-button hover:bg-[#97D9FF]">
               Get Started
-              <ArrowRightIcon className="relative h-4 w-4" />
+              <ArrowRight className="relative h-4 w-4" />
             </div>
           </div>
 
@@ -92,7 +91,7 @@ export default function Header({ lang }: { lang: string }) {
               className="focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50 -mr-1 rounded p-2 transition duration-200 focus:outline-none"
               onClick={() => setIsMenuOpen(true)}
             >
-              <HamburgerMenuIcon />
+              <Menu />
             </button>
 
             {isMenuOpen && (
