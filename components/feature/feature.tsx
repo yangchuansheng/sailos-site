@@ -76,17 +76,17 @@ export default function Feature() {
   return (
     <div className="mt-52">
       <AnimateElement type="slideUp">
-        <div className="text-center text-4xl font-bold text-black">
+        <div className="text-center text-base font-bold text-black sm:text-4xl">
           The Foundation for Your Data Success
         </div>
       </AnimateElement>
 
       <AnimateElement type="slideUp">
-        <div className="mt-16 flex justify-center gap-6">
+        <div className="mt-16 flex flex-col justify-center gap-6 lg:flex-row">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="relative flex w-1/3 flex-col justify-between rounded-lg bg-white"
+              className="relative flex h-[424px] flex-1 flex-col justify-between rounded-lg bg-white"
               style={{
                 boxShadow:
                   '0px 12px 40px -25px rgba(6, 26, 65, 0.20), 0px 0px 1px 0px rgba(19, 51, 107, 0.20)',
@@ -104,13 +104,17 @@ export default function Feature() {
                 </div>
               </AnimateElement>
               <div className="relative z-10 flex-1 overflow-hidden rounded-lg">
-                <AnimateElement type="slideUp" delay={0.6}>
+                <AnimateElement
+                  type="slideUp"
+                  delay={0.6}
+                  className="mt-auto h-full"
+                >
                   <Image
                     src={`/images/foundation-${index + 1}.svg`}
                     alt={feature.title}
                     width={411}
                     height={285}
-                    className="z-10 h-full w-full object-cover"
+                    className="z-10 mt-auto h-full w-full object-cover"
                   />
                 </AnimateElement>
               </div>
@@ -124,41 +128,42 @@ export default function Feature() {
 
       <div className="mt-[140px] flex flex-col gap-16">
         {features2.map((feature, index) => (
-          <div key={index}>
-            <AnimateElement
-              className={cn(
-                'flex h-[350px] gap-16 text-right',
-                index === 1 && 'flex-row-reverse text-left',
-              )}
-              type="slideUp"
-              delay={[0.5, 0.6, 0.7][index]}
+          <AnimateElement
+            key={index}
+            className={cn(
+              'flex flex-col-reverse gap-16 text-center lg:flex-row lg:text-right',
+              index === 1 && 'lg:flex-row-reverse lg:text-left',
+            )}
+            type="slideUp"
+            delay={[0.5, 0.6, 0.7][index]}
+          >
+            <MagicCard
+              gradientColor="#9ADFFF66"
+              gradientSize={300}
+              className="relative basis-1/2 rounded border border-dashed border-[#9DCBE6] bg-transparent"
             >
-              <MagicCard
-                gradientColor="#9ADFFF66"
-                gradientSize={300}
-                className="relative w-1/2 rounded border border-dashed border-[#9DCBE6] bg-transparent"
-              >
-                <Image src={feature.image} alt={feature.title} fill />
-              </MagicCard>
-              <div className="flex w-1/2 flex-col justify-center">
-                <h3 className="mb-5 text-[28px] font-bold">{feature.title}</h3>
-                <p className="text-base font-medium text-custom-secondary-text">
-                  {feature.description}
-                </p>
-              </div>
-            </AnimateElement>
-          </div>
+              <Image src={feature.image} alt={feature.title} fill />
+            </MagicCard>
+            <div className="flex basis-1/2 flex-col justify-center">
+              <h3 className="mb-5 text-base font-bold sm:text-[28px]">
+                {feature.title}
+              </h3>
+              <p className="text-xs font-medium text-custom-secondary-text sm:text-base">
+                {feature.description}
+              </p>
+            </div>
+          </AnimateElement>
         ))}
       </div>
 
       <AnimateElement type="slideUp">
-        <div className="mt-[200px] text-center text-4xl font-bold text-black">
+        <div className="mt-[200px] text-center text-base font-bold text-black sm:text-4xl">
           Discover How Efficient Your Team Could Be
         </div>
-        <div className="mt-16 flex items-center justify-between rounded border border-dashed border-[#9DCBE6] px-20 py-9">
+        <div className="mt-16 flex flex-wrap items-center gap-10 rounded border border-dashed border-[#9DCBE6] px-2 py-9 lg:px-20">
           {performanceStats.map((stat, index) => (
-            <div key={index} className="flex items-center">
-              <div>
+            <div key={index} className="flex flex-1 items-center ">
+              <div className="h-[37px] w-[37px] flex-shrink-0 lg:h-[80px] lg:w-[80px]">
                 <Image
                   src={stat.icon}
                   alt={stat.description}
@@ -167,10 +172,10 @@ export default function Feature() {
                 />
               </div>
               <div className="flex flex-col">
-                <div className="text-[28px] font-bold text-black">
+                <div className="text-[12px] font-bold text-black lg:text-[28px]">
                   {stat.percentage}
                 </div>
-                <div className="text-sm font-medium text-custom-secondary-text">
+                <div className="text-[6px] font-medium text-custom-secondary-text lg:text-sm">
                   {stat.description}
                 </div>
               </div>

@@ -67,7 +67,7 @@ export default function Header({ lang }: { lang: string }) {
                 {siteConfig.name}
               </span>
             </Link>
-            <div className="hidden items-center gap-x-6 text-sm font-medium lg:flex">
+            <div className="hidden items-center gap-x-5 text-sm font-medium lg:flex">
               {links.map((link) => (
                 <Link
                   key={link.text}
@@ -88,7 +88,7 @@ export default function Header({ lang }: { lang: string }) {
           </div>
 
           {/* phone menu */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               aria-label="Open Menu"
               title="Open Menu"

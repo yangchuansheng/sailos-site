@@ -8,19 +8,6 @@ import { AnimateElement } from '../ui/animated-wrapper';
 
 const DynamicVideo = dynamic(() => import('./video'), {
   ssr: false,
-  loading: () => (
-    <div className="z-10 mx-16 mt-10 flex items-center justify-center">
-      <img
-        src="/images/video-thumbnail.png"
-        alt="video-thumbnail"
-        className="h-full w-full max-w-[1046px] rounded-xl object-cover"
-        style={{
-          boxShadow:
-            '0px 32px 64px -20px rgba(0, 91, 129, 0.20), 0px 0px 1px 0px rgba(19, 51, 107, 0.20)',
-        }}
-      />
-    </div>
-  ),
 });
 
 export default function Hero() {
@@ -51,15 +38,15 @@ export default function Hero() {
         style={{ width: '153px', height: '92px' }}
       />
 
-      <div className="relative flex min-h-[1000px] w-full flex-col overflow-hidden rounded-lg py-20">
+      <div className="relative flex min-h-[1000px] w-full flex-col overflow-hidden rounded-lg py-6 sm:py-14 lg:py-20">
         <div className="z-10 whitespace-pre-wrap text-center tracking-tighter text-black dark:text-white">
           <TypingAnimation
-            className="text-[80px] font-bold leading-[97px]"
+            className=" text-2xl font-bold leading-[97px] sm:text-[56px] lg:text-[64px] xl:text-[80px]"
             text="Sailos DevBox"
           />
           <AnimateElement type="slideUp" delay={0.2} duration={0.6}>
             <div
-              className="mx-auto my-6 max-w-[700px] text-base font-medium text-custom-secondary-text"
+              className="mx-auto my-6 max-w-[700px] text-xs font-medium text-custom-secondary-text sm:text-base"
               style={{ letterSpacing: '0.15px' }}
             >
               Development sandboxes, establish various programming language
@@ -69,11 +56,11 @@ export default function Hero() {
             </div>
 
             <div className="flex items-center justify-center gap-4 text-base font-medium">
-              <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-custom-bg py-2 pl-5 pr-4 text-custom-primary-text shadow-button hover:bg-[#97D9FF]">
+              <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-custom-bg py-2 pl-4 pr-3 text-custom-primary-text shadow-button hover:bg-[#97D9FF] sm:pl-5 sm:pr-4">
                 Get Started
                 <ArrowRight className="relative h-4 w-4" />
               </div>
-              <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-[#FAFCFF] px-5 py-2 text-custom-primary-text shadow-button hover:bg-[#F1F5FB]">
+              <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-[#FAFCFF] px-4 py-2 text-custom-primary-text shadow-button hover:bg-[#F1F5FB] sm:px-5">
                 Contact Us
               </div>
             </div>

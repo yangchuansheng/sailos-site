@@ -90,12 +90,12 @@ export default function TechGrid() {
   return (
     <div className="mt-52">
       <AnimateElement type="slideUp">
-        <div className="mb-16 text-center text-4xl font-bold text-black">
+        <div className="mb-16 text-center text-base font-bold text-black sm:text-4xl">
           Start a Sharable Environment in Seconds
         </div>
 
         {/* Tabs */}
-        <div className="mb-9 flex justify-center space-x-4 text-base font-medium">
+        <div className="mb-9 flex flex-wrap justify-center gap-4 text-sm font-medium sm:text-base">
           {Object.keys(mockData).map((tab) => (
             <button
               key={tab}
@@ -128,12 +128,12 @@ export default function TechGrid() {
                   '0px 12px 40px -25px rgba(6, 26, 65, 0.20), 0px 0px 1px 0px rgba(19, 51, 107, 0.20)',
               }}
             >
-              <div className="text-4xl">{tech.icon}</div>
+              <div className="size-7 text-4xl lg:size-10">{tech.icon}</div>
               <div>
-                <h3 className="mb-1 text-lg font-medium text-black">
+                <h3 className="mb-1 text-xs font-medium text-black lg:text-lg">
                   {tech.name}
                 </h3>
-                <p className="text-xs text-custom-secondary-text">
+                <p className="text-[8px] text-custom-secondary-text lg:text-xs">
                   {tech.language}
                 </p>
               </div>
@@ -142,7 +142,7 @@ export default function TechGrid() {
         </div>
         <div className="mt-14 flex justify-center">
           <div
-            className="max-w-[760px] rounded-[46px] border border-solid border-[#ABE1FF] px-4 py-3 text-center text-sm font-medium text-custom-secondary-text"
+            className="max-w-[760px] rounded-[46px] border border-solid border-[#ABE1FF] px-4 py-3 text-center text-xs font-medium text-custom-secondary-text md:text-sm"
             style={{
               background:
                 'linear-gradient(90deg, rgba(170, 229, 255, 0.30) 0%, rgba(170, 229, 255, 0.20) 100%)',

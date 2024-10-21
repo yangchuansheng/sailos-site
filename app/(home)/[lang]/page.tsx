@@ -5,7 +5,6 @@ import TechGrid from '@/components/feature/techgrid';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import Hero from '@/components/header/hero';
-import { AnimateElement } from '@/components/ui/animated-wrapper';
 
 export default function HomePage({ params }: { params: { lang: string } }) {
   return (

@@ -38,7 +38,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({
 const Footer = async () => {
   return (
     <div className="custom-container relative pt-20">
-      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between text-sm sm:flex-row">
+      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between text-sm lg:flex-row">
         <div>
           <div className="mb-4 mr-4 md:flex">
             <Link
@@ -57,11 +57,12 @@ const Footer = async () => {
               <span className="text-xl font-bold">{siteConfig.name}</span>
             </Link>
           </div>
-          <div className="mt-3 text-sm font-medium text-custom-secondary-text">
+          <div className="mt-3 text-xs font-medium text-custom-secondary-text sm:text-sm">
             A cloud operating system based on the Kubernetes kernel
           </div>
         </div>
-        <div className="mt-10 grid grid-cols-3 items-start gap-10 md:mt-0">
+
+        <div className="mt-10 grid grid-cols-3 items-start gap-10 lg:mt-0">
           <FooterLinkColumn>
             <FooterLink
               className="text-base font-semibold uppercase text-black hover:text-black hover:no-underline"

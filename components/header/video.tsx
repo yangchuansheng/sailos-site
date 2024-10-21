@@ -5,7 +5,7 @@ import { AnimateElement } from '../ui/animated-wrapper';
 
 export default function Video() {
   return (
-    <div className="z-10 mx-16 mt-10 flex items-center justify-center">
+    <div className="z-10 mt-10 flex items-center justify-center">
       <AnimateElement type="slideUp" delay={0.2} duration={0.6}>
         <ReactPlayer
           url="https://objectstorageapi.usw.sailos.io/yzxbv756-sailos/sailos-devbox.mp4"

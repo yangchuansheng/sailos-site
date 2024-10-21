@@ -1,6 +1,4 @@
-import { ArrowRight, Menu } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { AnimateElement } from '../ui/animated-wrapper';
 
 const data = [
@@ -91,11 +89,13 @@ export default function Example() {
   return (
     <div className="mt-[140px]">
       <AnimateElement type="slideUp">
-        <div className="text-center text-4xl font-bold text-black">Example</div>
+        <div className="text-center text-base font-bold text-black sm:text-4xl">
+          Example
+        </div>
         <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {data.map((item, index) => (
             <div
-              className="flex flex-1 cursor-pointer items-center gap-3 rounded-lg bg-white/80 p-6 text-base font-medium text-black shadow-example-card hover:text-[#005B9C]"
+              className="flex flex-1 cursor-pointer items-center gap-3 rounded-lg bg-white/80 p-6 text-sm font-medium text-black shadow-example-card hover:text-[#005B9C] md:text-base"
               key={index}
             >
               <StarIcon />
@@ -103,15 +103,16 @@ export default function Example() {
             </div>
           ))}
         </div>
+
         <div
-          className="mt-[100px] flex h-[312px] w-full justify-between rounded-[20px]"
+          className="mt-[100px] flex w-full flex-col justify-between rounded-[20px] md:flex-row"
           style={{
             background: 'linear-gradient(90deg, #D6EEFF 0%, #E1F3FF 100%)',
           }}
         >
           <AnimateElement type="slideUp">
-            <div className="flex flex-col gap-16 pl-[72px] pt-[70px]">
-              <div className="w-[535px] text-[28px] font-bold text-black">
+            <div className="flex flex-col gap-16 px-4 pt-[70px] sm:px-[72px]">
+              <div className="text-base font-bold text-black sm:text-[28px]">
                 Start a New Development Environment in Seconds
               </div>
               <div className="flex w-fit cursor-pointer items-center justify-center gap-[6px] rounded-md bg-[#FAFCFF] py-2 pl-5 pr-4 text-custom-primary-text shadow-button hover:bg-[#F1F5FB]">
@@ -120,10 +121,11 @@ export default function Example() {
               </div>
             </div>
           </AnimateElement>
-
-          <div className="relative z-10  max-w-[478px] flex-1">
-            <Image src="/images/example.png" alt="Example" fill />
-          </div>
+          <img
+            src="/images/example.png"
+            alt="Example"
+            className="ml-auto block h-[312px] w-[478px] object-cover"
+          />
         </div>
       </AnimateElement>
     </div>

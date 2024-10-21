@@ -37,22 +37,14 @@
   margin-right: auto;
 }
 
-@media (min-width: 375px) {
-  .custom-container {
-    max-width: 340px;
-  }
-  .custom-container-header {
-    max-width: 340px;
-  }
+.custom-container {
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
-@media (min-width: 640px) {
-  .custom-container {
-    max-width: 590px;
-  }
-  .custom-container-header {
-    max-width: 590px;
-  }
+.custom-container-header {
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 @media (min-width: 768px) {
