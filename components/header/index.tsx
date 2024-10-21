@@ -120,7 +120,7 @@ export default function Header({ lang }: { lang: string }) {
                             width={32}
                             height={32}
                           />
-                          <span className="ml-2 text-xl font-bold tracking-wide text-gray-950 dark:text-gray-300">
+                          <span className="ml-2 text-xl font-bold tracking-wide text-gray-950">
                             {siteConfig.name}
                           </span>
                         </Link>

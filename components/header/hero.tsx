@@ -20,7 +20,6 @@ export default function Hero() {
         alt="hero-bg"
         width={136}
         height={100}
-        // style={{ width: '136px', height: '100px' }}
       />
       <Image
         className="absolute -top-8 right-20 z-10 h-[28px] w-[34px] lg:right-64 lg:h-[115px] lg:w-[181px]"
@@ -28,7 +27,6 @@ export default function Hero() {
         alt="hero-bg"
         width={181}
         height={115}
-        // style={{ width: '181px', height: '115px' }}
       />
       <Image
         className="absolute right-12 top-[130px] z-10 h-[28px] w-[34px] lg:right-36 lg:top-[330px] lg:h-[92px] lg:w-[153px]"
@@ -36,11 +34,10 @@ export default function Hero() {
         alt="hero-bg"
         width={153}
         height={92}
-        // style={{ width: '153px', height: '92px' }}
       />
 
       <div className="relative flex min-h-[700px] w-full  flex-col overflow-hidden rounded-lg pb-0 pt-6 sm:py-14 lg:min-h-[1000px] lg:py-20">
-        <div className="z-10 whitespace-pre-wrap text-center tracking-tighter text-black dark:text-white">
+        <div className="z-10 whitespace-pre-wrap text-center tracking-tighter text-black">
           <TypingAnimation
             className=" text-2xl font-bold leading-[97px] sm:text-[56px] lg:text-[64px] xl:text-[80px]"
             text="Sailos Devbox"
@@ -73,11 +70,8 @@ export default function Hero() {
           numSquares={200}
           maxOpacity={0.5}
           duration={1}
-          // repeatDelay={1}
           className={cn(
             '[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]',
-            // 'inset-x-0 inset-y-[-10%] h-[200%]',
-            // 'bg-[#cce4f7]',
             'top-10 h-[600px]',
           )}
         />

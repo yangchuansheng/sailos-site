@@ -99,7 +99,7 @@ export function StickyBox() {
               className="flex flex-col gap-8"
             >
               <div className="flex gap-8">
-                <div className="flex size-8 flex-shrink-0 items-start items-center justify-center rounded-lg bg-[#F4FCFF] p-[6px] sm:size-14">
+                <div className="flex size-8 flex-shrink-0 items-start rounded-lg bg-[#F4FCFF] p-[6px] sm:size-14">
                   {item.icon}
                 </div>
                 <div>

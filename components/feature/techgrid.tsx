@@ -91,7 +91,7 @@ export default function TechGrid() {
     <div className="mt-0 lg:mt-52">
       <AnimateElement type="slideUp">
         <div className="mb-6 text-center text-base font-bold text-black sm:mb-16 sm:text-4xl">
-          Instant collaborative environments at your fingertips
+          Instant Collaborative Environments at Your Fingertips
         </div>
 
         {/* Tabs */}

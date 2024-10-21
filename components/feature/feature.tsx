@@ -106,7 +106,7 @@ export default function Feature() {
               <div className="relative z-10 flex-1 overflow-hidden rounded-lg">
                 <AnimateElement
                   type="slideUp"
-                  delay={0.6}
+                  delay={0.4}
                   className="mt-auto h-full"
                 >
                   <Image
