@@ -88,10 +88,10 @@ export default function TechGrid() {
   }, []);
 
   return (
-    <div className="mt-52">
+    <div className="mt-0 lg:mt-52">
       <AnimateElement type="slideUp">
-        <div className="mb-16 text-center text-base font-bold text-black sm:text-4xl">
-          Start a Sharable Environment in Seconds
+        <div className="mb-6 text-center text-base font-bold text-black sm:mb-16 sm:text-4xl">
+          Instant collaborative environments at your fingertips
         </div>
 
         {/* Tabs */}
@@ -148,13 +148,11 @@ export default function TechGrid() {
                 'linear-gradient(90deg, rgba(170, 229, 255, 0.30) 0%, rgba(170, 229, 255, 0.20) 100%)',
             }}
           >
-            Support for that can run on
+            Quickly spin up environments for
             <span className="px-1 text-[#008AB6]">
-              all programming languages and frameworks
+              various programming languages and frameworks
             </span>
-            the Linux platform, and support for
-            <span className="px-1 text-[#008AB6]">quick installation</span> of
-            less commonly used programming languages
+            , includes those that are less common.
           </div>
         </div>
       </AnimateElement>

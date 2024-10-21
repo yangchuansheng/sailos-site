@@ -23,7 +23,7 @@ const animations: Record<AnimationType, any> = {
 export const AnimateElement: React.FC<AnimateElementProps> = ({
   children,
   type,
-  delay = 0.5,
+  delay = 0.2,
   duration = 0.9,
   className,
 }) => {

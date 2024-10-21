@@ -8,42 +8,42 @@ const features = [
   {
     title: 'Cloud OS',
     description:
-      'Unlock the Full Potential of Containers: Native K8s Management, Container Cluster Creation in One Click, and Automated Container Application Deployment.',
+      'Manage as in a vanilla Kubernetes, create clusters with single-click, and deploy containerized applications automatically',
     icon: <SailosIcon />,
   },
   {
-    title: 'High Availability Database',
+    title: 'HA Databases',
     description:
-      'Click to automatically deploy a high-availability distributed database, no need to build a complex multi-node architecture, fully compatible with mysql/redis/mongo/pgsql and other ecosystems.',
+      'Instantly deploy distributed databases with built-in high availability. Supports MySQL, Redis, MongoDB, PostgreSQL, and more - no complex multi-node setup required.',
     icon: <DatabaseIcon />,
   },
   {
     title: 'Object Storage',
     description:
-      'Effortlessly migrate data from TB to PB scale to the cloud with robust redundancy and disaster recovery capabilities. Seamlessly integrate your applications with our SDKs available in multiple languages.',
+      'Secure cloud data migration with built-in redundancy and disaster recovery. Seamlessly integrates with multi-language SDKs.',
     icon: <ObjectStorageIcon />,
   },
 ];
 
 const features2 = [
   {
-    title: 'Environmental Safety Isolation',
+    title: 'Secure Environment Isolation',
     description:
-      'Collaborate Effortlessly! All team members can access the same Devbox environment, sharing code repositories, configuration files, and test data for seamless project development in the cloud. This significantly reduces the need for complex environment coordination, accelerating your development process and boosting team productivity.',
+      'Develop in isolated environments and avoid dependency nightmares. Use consistent, reproducible workspaces for each project, and focus on relevant tasks.',
     icon: '🛡️',
     image: '/images/foundation-2-1.svg',
   },
   {
-    title: 'Unmatched Performance',
+    title: 'Unparalleled Performance',
     description:
-      'Our custom-built lightweight load balancer can handle massive clusters of tens of thousands of nodes, providing unparalleled performance.',
+      'Our proprietary lightweight load balancer manages large-scale clusters with up to tens of thousands of nodes, delivering exceptional performance.',
     icon: '🚀',
     image: '/images/foundation-2-2.svg',
   },
   {
     title: 'Access from Any Network',
     description:
-      'Devbox provides both intranet and Internet access addresses, with automated SSL certificate provisioning for enhanced security and flexibility. This empowers developers to work seamlessly across networks while maintaining a secure connection.',
+      'Get access to applications from the internal network and the Internet, with automatic TLS configuration. Develop securely and flexibly on any networks, anywhere.',
     icon: '🌐',
     image: '/images/foundation-2-3.svg',
   },
@@ -77,7 +77,7 @@ export default function Feature() {
     <div className="mt-52">
       <AnimateElement type="slideUp">
         <div className="text-center text-base font-bold text-black sm:text-4xl">
-          The Foundation for Your Data Success
+          Infrastructure
         </div>
       </AnimateElement>
 
@@ -135,7 +135,7 @@ export default function Feature() {
               index === 1 && 'lg:flex-row-reverse lg:text-left',
             )}
             type="slideUp"
-            delay={[0.5, 0.6, 0.7][index]}
+            delay={[0.2, 0.3, 0.4][index]}
           >
             <MagicCard
               gradientColor="#9ADFFF66"
@@ -158,11 +158,11 @@ export default function Feature() {
 
       <AnimateElement type="slideUp">
         <div className="mt-[200px] text-center text-base font-bold text-black sm:text-4xl">
-          Discover How Efficient Your Team Could Be
+          Instant Development Environments
         </div>
         <div className="mt-16 flex flex-wrap items-center gap-10 rounded border border-dashed border-[#9DCBE6] px-2 py-9 lg:px-20">
           {performanceStats.map((stat, index) => (
-            <div key={index} className="flex flex-1 items-center ">
+            <div key={index} className="flex flex-1 items-center gap-4">
               <div className="h-[37px] w-[37px] flex-shrink-0 lg:h-[80px] lg:w-[80px]">
                 <Image
                   src={stat.icon}
@@ -175,7 +175,7 @@ export default function Feature() {
                 <div className="text-[12px] font-bold text-black lg:text-[28px]">
                   {stat.percentage}
                 </div>
-                <div className="text-[6px] font-medium text-custom-secondary-text lg:text-sm">
+                <div className="text-nowrap text-[6px] font-medium text-custom-secondary-text lg:text-sm">
                   {stat.description}
                 </div>
               </div>

@@ -105,17 +105,17 @@ export default function Example() {
         </div>
 
         <div
-          className="mt-[100px] flex w-full flex-col justify-between rounded-[20px] md:flex-row"
+          className="mt-[100px] flex w-full flex-col justify-between overflow-hidden rounded-[20px] md:flex-row"
           style={{
             background: 'linear-gradient(90deg, #D6EEFF 0%, #E1F3FF 100%)',
           }}
         >
           <AnimateElement type="slideUp">
-            <div className="flex flex-col gap-16 px-4 pt-[70px] sm:px-[72px]">
-              <div className="text-base font-bold text-black sm:text-[28px]">
+            <div className="flex size-full flex-col justify-center gap-16 px-4 py-16 sm:px-[72px] md:pr-0">
+              <div className="text-base font-bold leading-normal  text-black sm:text-[28px]">
                 Start a New Development Environment in Seconds
               </div>
-              <div className="flex w-fit cursor-pointer items-center justify-center gap-[6px] rounded-md bg-[#FAFCFF] py-2 pl-5 pr-4 text-custom-primary-text shadow-button hover:bg-[#F1F5FB]">
+              <div className="flex w-fit cursor-pointer items-center justify-center gap-[6px] rounded-md bg-[#FAFCFF] py-2 pl-5 pr-4 font-medium text-custom-primary-text shadow-button hover:bg-[#F1F5FB]">
                 New Project
                 <ArrowRight className="relative h-4 w-4" />
               </div>

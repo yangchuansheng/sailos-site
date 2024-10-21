@@ -105,7 +105,7 @@ const Footer = async () => {
 
       <div className="mt-16 h-[1px] w-full bg-[#DDE7F7]"></div>
       <div className="flex justify-between pb-6 pl-2 pt-4">
-        <div className="flex items-center space-x-2 text-sm font-normal text-custom-secondary-text">
+        <div className="flex items-center space-x-2 text-[10px] font-normal text-custom-secondary-text md:text-sm">
           <Link href="/terms-of-service">Terms of Service</Link>
           <Link href="/privacy-policy">Privacy Policy</Link>
           <div>|</div>

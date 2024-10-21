@@ -7,9 +7,9 @@ import { useState, useEffect } from 'react';
 
 const content = [
   {
-    title: 'Unified Cloud Development Environment',
+    title: 'Cloud Development Environment',
     description:
-      'Collaborate Effortlessly!  All team members can access the same Devbox environment, sharing code repositories, configuration files, and test data for seamless project development in the cloud.  This significantly reduces the need for complex environment coordination, accelerating your development process and boosting team productivity.',
+      'Eliminate environment inconsistencies. Sailos Devbox provides a unified cloud platform where teams share code, configs, and test data. This streamlines workflows, accelerates development, and enhances efficiency. Experience seamless collaboration in a single, harmonious environment.',
     content: (
       <div className="relative aspect-[700/450] w-full overflow-hidden rounded-lg bg-[#FAFCFF] shadow-sticky-box">
         <Image
@@ -30,9 +30,9 @@ const content = [
     ),
   },
   {
-    title: 'Real time changes',
+    title: 'Headless Developing Experience',
     description:
-      'See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.',
+      'Simplify setup. Unify dev, test, and production. Automate environment creation and integrate with local IDEs.',
     content: (
       <div className="relative aspect-[700/450] w-full overflow-hidden rounded-lg bg-[#FAFCFF] shadow-sticky-box">
         <Image
@@ -53,9 +53,9 @@ const content = [
     ),
   },
   {
-    title: 'Version control',
+    title: 'Effortless Continuous Delivery',
     description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      'Deliver applications smoothly with no Docker or Kubernetes expertise needed. Just enter the version, while Devbox doing all the dirty work, such as building containers.',
     content: (
       <div className="relative aspect-[700/450] max-h-[400px] w-full rounded-lg bg-[#FAFCFF] shadow-sticky-box">
         <Image

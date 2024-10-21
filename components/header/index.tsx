@@ -4,14 +4,15 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 import Link from 'fumadocs-core/link';
-import { ArrowRight, Menu } from 'lucide-react';
+import { ArrowRight, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
+import { GetStartedButton } from '../ui/shiny-button';
 
 const links = [
   {
     text: 'App Store',
-    url: '/app-store',
+    url: 'https://template.usw.sailos.io',
   },
   {
     text: 'Docs',
@@ -81,10 +82,7 @@ export default function Header({ lang }: { lang: string }) {
           </div>
 
           <div className="hidden items-center gap-4 text-sm font-medium lg:flex">
-            <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-custom-bg py-2 pl-4 pr-3 text-custom-primary-text shadow-button hover:bg-[#97D9FF]">
-              Get Started
-              <ArrowRight className="relative h-4 w-4" />
-            </div>
+            <GetStartedButton />
           </div>
 
           {/* phone menu */}
@@ -99,50 +97,60 @@ export default function Header({ lang }: { lang: string }) {
             </button>
 
             {isMenuOpen && (
-              <div className="absolute left-0 top-0 z-50 w-full">
-                <div className="rounded border bg-background p-5 shadow-sm">
-                  <div className="mb-4 flex items-center justify-between">
-                    <div>
-                      <Link
-                        href="/"
-                        aria-label={siteConfig.name}
-                        title={siteConfig.name}
-                        className="inline-flex items-center"
-                      >
-                        <Image
-                          alt={siteConfig.name}
-                          src="/logo.svg"
-                          className="h-8 w-8"
-                          width={32}
-                          height={32}
-                        />
-                        <span className="ml-2 text-xl font-bold tracking-wide text-gray-950 dark:text-gray-300">
-                          {siteConfig.name}
-                        </span>
-                      </Link>
-                    </div>
-                    <div>
-                      <button
-                        aria-label="Close Menu"
-                        title="Close Menu"
-                        className="font-norma tracking-wide transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        123
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="pt-2">
-                    <div className="flex items-center justify-between gap-x-5">
-                      123
-                      <div className="flex items-center justify-end gap-x-5">
-                        123
+              <>
+                <div
+                  className="fixed inset-0 z-40 bg-black/50 transition-opacity duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                  aria-hidden="true"
+                />
+                <div className="absolute left-0 top-0 z-50 w-full">
+                  <div className="bg-[#EBF2FF] px-4 py-3">
+                    <div className="mb-4 flex items-center justify-between">
+                      <div>
+                        <Link
+                          href="/"
+                          aria-label={siteConfig.name}
+                          title={siteConfig.name}
+                          className="inline-flex items-center"
+                        >
+                          <Image
+                            alt={siteConfig.name}
+                            src="/logo.svg"
+                            className="h-8 w-8"
+                            width={32}
+                            height={32}
+                          />
+                          <span className="ml-2 text-xl font-bold tracking-wide text-gray-950 dark:text-gray-300">
+                            {siteConfig.name}
+                          </span>
+                        </Link>
                       </div>
+                      <div>
+                        <button
+                          aria-label="Close Menu"
+                          title="Close Menu"
+                          className="font-norma tracking-wide transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          <X />
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-y-2">
+                      {links.map((link) => (
+                        <Link
+                          key={link.text}
+                          href={link.url}
+                          className="rounded-md px-2 py-1 hover:bg-[#0306070D]"
+                        >
+                          {link.text}
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>
-              </div>
+              </>
             )}
           </div>
         </div>

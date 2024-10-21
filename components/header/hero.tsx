@@ -5,6 +5,7 @@ import AnimatedGridPattern from '../ui/animated-grid-pattern';
 import TypingAnimation from '../ui/typing-animation';
 import Image from 'next/image';
 import { AnimateElement } from '../ui/animated-wrapper';
+import { GetStartedButton } from '../ui/shiny-button';
 
 const DynamicVideo = dynamic(() => import('./video'), {
   ssr: false,
@@ -14,52 +15,49 @@ export default function Hero() {
   return (
     <div className="relative">
       <Image
-        className="absolute left-28 top-28 z-10"
+        className="absolute left-4  top-4 z-10 h-[28px] w-[34px] lg:left-28 lg:top-28 lg:h-[100px] lg:w-[136px]"
         src="/images/header-1.svg"
         alt="hero-bg"
         width={136}
         height={100}
-        style={{ width: '136px', height: '100px' }}
+        // style={{ width: '136px', height: '100px' }}
       />
       <Image
-        className="absolute -top-8 right-64 z-10"
+        className="absolute -top-8 right-20 z-10 h-[28px] w-[34px] lg:right-64 lg:h-[115px] lg:w-[181px]"
         src="/images/header-2.svg"
         alt="hero-bg"
         width={181}
         height={115}
-        style={{ width: '181px', height: '115px' }}
+        // style={{ width: '181px', height: '115px' }}
       />
       <Image
-        className="absolute right-36 top-[330px] z-10"
+        className="absolute right-12 top-[130px] z-10 h-[28px] w-[34px] lg:right-36 lg:top-[330px] lg:h-[92px] lg:w-[153px]"
         src="/images/header-3.svg"
         alt="hero-bg"
         width={153}
         height={92}
-        style={{ width: '153px', height: '92px' }}
+        // style={{ width: '153px', height: '92px' }}
       />
 
-      <div className="relative flex min-h-[1000px] w-full flex-col overflow-hidden rounded-lg py-6 sm:py-14 lg:py-20">
+      <div className="relative flex min-h-[700px] w-full  flex-col overflow-hidden rounded-lg pb-0 pt-6 sm:py-14 lg:min-h-[1000px] lg:py-20">
         <div className="z-10 whitespace-pre-wrap text-center tracking-tighter text-black dark:text-white">
           <TypingAnimation
             className=" text-2xl font-bold leading-[97px] sm:text-[56px] lg:text-[64px] xl:text-[80px]"
-            text="Sailos DevBox"
+            text="Sailos Devbox"
           />
           <AnimateElement type="slideUp" delay={0.2} duration={0.6}>
             <div
-              className="mx-auto my-6 max-w-[700px] text-xs font-medium text-custom-secondary-text sm:text-base"
+              className="mx-auto mb-6 mt-0  max-w-[700px] text-xs font-medium text-custom-secondary-text sm:my-6 sm:text-base"
               style={{ letterSpacing: '0.15px' }}
             >
-              Development sandboxes, establish various programming language
-              environments and database dependencies with a single click in the
-              cloud, connect via IDE to streamline development environment setup
-              and automate deployment and releases.
+              An all-in-one platform for integrated online development, testing,
+              and production. Create environments and database dependencies with
+              a single click. Seamlessly develop at local with your IDE,
+              streamlining setup and deploy applications automatically.
             </div>
 
             <div className="flex items-center justify-center gap-4 text-base font-medium">
-              <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-custom-bg py-2 pl-4 pr-3 text-custom-primary-text shadow-button hover:bg-[#97D9FF] sm:pl-5 sm:pr-4">
-                Get Started
-                <ArrowRight className="relative h-4 w-4" />
-              </div>
+              <GetStartedButton />
               <div className="flex cursor-pointer items-center justify-center gap-[6px] rounded-md bg-[#FAFCFF] px-4 py-2 text-custom-primary-text shadow-button hover:bg-[#F1F5FB] sm:px-5">
                 Contact Us
               </div>
