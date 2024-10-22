@@ -9,7 +9,7 @@ const content = [
   {
     title: 'Cloud Development Environment',
     description:
-      'Eliminate environment inconsistencies. Sailos Devbox provides a unified cloud platform where teams share code, configs, and test data. This streamlines workflows, accelerates development, and enhances efficiency. Experience seamless collaboration in a single, harmonious environment.',
+      'Skip the hassle of creating duplicate workspaces. Share code, configurations, and test data with your teammates. Enhance workflows, accelerate development, and boost efficiency while collaborating—all in one cloud platform from Sailos Devbox.',
     content: (
       <div className="relative aspect-[700/450] w-full overflow-hidden rounded-lg bg-[#FAFCFF] shadow-sticky-box">
         <Image
@@ -30,9 +30,9 @@ const content = [
     ),
   },
   {
-    title: 'Headless Developing Experience',
+    title: 'Streamline Your WorkFlow',
     description:
-      'Simplify setup. Unify dev, test, and production. Automate environment creation and integrate with local IDEs.',
+      'Experience the power of a unified environment for development, testing, and production. Automate your setup and effortlessly connect to your favorite local IDEs, unlocking a smoother workflow and unparalleled efficiency',
     content: (
       <div className="relative aspect-[700/450] w-full overflow-hidden rounded-lg bg-[#FAFCFF] shadow-sticky-box">
         <Image
@@ -55,7 +55,7 @@ const content = [
   {
     title: 'Effortless Continuous Delivery',
     description:
-      'Deliver applications smoothly with no Docker or Kubernetes expertise needed. Just enter the version, while Devbox doing all the dirty work, such as building containers.',
+      'Deliver applications with ease, no Docker or Kubernetes expertise required. Just specify the version, and let Devbox handle all the heavy lifting, including building containers.',
     content: (
       <div className="relative aspect-[700/450] max-h-[400px] w-full rounded-lg bg-[#FAFCFF] shadow-sticky-box">
         <Image

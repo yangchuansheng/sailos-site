@@ -64,41 +64,46 @@ const Footer = async () => {
 
         <div className="mt-10 grid grid-cols-3 items-start gap-10 lg:mt-0">
           <FooterLinkColumn>
-            <FooterLink
-              className="text-base font-semibold uppercase text-black hover:text-black hover:no-underline"
-              href="/contact"
-            >
+            <div className="text-base font-semibold uppercase text-black hover:text-black hover:no-underline">
               Product
-            </FooterLink>
-            <FooterLink className="mt-6" href="/contact">
+            </div>
+            <FooterLink className="mt-6" href="https://github.com/labring/laf">
               Laf
             </FooterLink>
-            <FooterLink href="/contact">Sealfs</FooterLink>
-            <FooterLink href="/contact">FastGPT</FooterLink>
+            <FooterLink href="https://github.com/labring/sealfs">
+              Sealfs
+            </FooterLink>
+            <FooterLink href="https://github.com/labring/FastGPT">
+              FastGPT
+            </FooterLink>
           </FooterLinkColumn>
           <FooterLinkColumn>
-            <FooterLink
-              className="text-base font-semibold uppercase text-black hover:text-black hover:no-underline"
-              href="/contact"
-            >
+            <div className="text-base font-semibold uppercase text-black hover:text-black hover:no-underline">
               Developer
+            </div>
+            <FooterLink
+              href={
+                'https://github.com/labring/sealos/blob/main/CONTRIBUTING.md'
+              }
+            >
+              Contribute
             </FooterLink>
-            <FooterLink href={siteConfig.links.twitter}>Contribute</FooterLink>
             <FooterLink href={siteConfig.links.github}>
               Private Deployment
             </FooterLink>
           </FooterLinkColumn>
           <FooterLinkColumn>
-            <FooterLink
-              className="text-base font-semibold uppercase text-black hover:text-black hover:no-underline"
-              href="/contact"
-            >
+            <div className="text-base font-semibold uppercase text-black hover:text-black hover:no-underline">
               Support
+            </div>
+            <FooterLink href="https://forum.laf.run/">
+              Developer Community
             </FooterLink>
-            <FooterLink href="#">Developer Community</FooterLink>
-            <FooterLink href="#">Issue Feedback</FooterLink>
+            <FooterLink href="https://github.com/labring/sealos/issues">
+              Issue Feedback
+            </FooterLink>
             <FooterLink href="#">About Us</FooterLink>
-            <FooterLink href="#">Contact Us</FooterLink>
+            {/* <FooterLink href="#">Contact Us</FooterLink> */}
           </FooterLinkColumn>
         </div>
       </div>
@@ -106,8 +111,18 @@ const Footer = async () => {
       <div className="mt-16 h-[1px] w-full bg-[#DDE7F7]"></div>
       <div className="flex justify-between pb-6 pl-2 pt-4">
         <div className="flex items-center space-x-2 text-[10px] font-normal text-custom-secondary-text md:text-sm">
-          <Link href="/terms-of-service">Terms of Service</Link>
-          <Link href="/privacy-policy">Privacy Policy</Link>
+          <FooterLink
+            className="text-[10px] font-normal text-custom-secondary-text md:text-sm"
+            href="/terms-of-service"
+          >
+            Terms of Service
+          </FooterLink>
+          <FooterLink
+            className="text-[10px] font-normal text-custom-secondary-text md:text-sm"
+            href="/privacy-policy"
+          >
+            Privacy Policy
+          </FooterLink>
           <div>|</div>
           <div>Copyright © 2024 Fumadocs. All rights reserved.</div>
         </div>

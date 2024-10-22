@@ -1,82 +1,62 @@
 'use client';
 import React, { useCallback, useState } from 'react';
 import { AnimateElement } from '../ui/animated-wrapper';
+import Image from 'next/image';
 
 const mockData = {
   Popular: [
-    { name: 'React', language: 'JavaScript', icon: '⚛️' },
-    { name: 'Vue', language: 'JavaScript', icon: '🖖' },
-    { name: 'Angular', language: 'TypeScript', icon: '🅰️' },
-  ],
-  Frontend: [
-    { name: 'React', language: 'JavaScript', icon: '⚛️' },
-    { name: 'Vue', language: 'JavaScript', icon: '🖖' },
-    { name: 'Svelte', language: 'JavaScript', icon: '🔥' },
-    { name: 'Solid', language: 'JavaScript', icon: '💎' },
-    { name: 'Ember', language: 'JavaScript', icon: '🐹' },
-    { name: 'Preact', language: 'JavaScript', icon: '⚛' },
-    { name: 'Alpine.js', language: 'JavaScript', icon: '🗻' },
-    { name: 'Lit', language: 'JavaScript', icon: '🔥' },
-    { name: 'Stencil', language: 'TypeScript', icon: '⚡' },
-    { name: 'Mithril', language: 'JavaScript', icon: '🛡️' },
-    { name: 'Riot.js', language: 'JavaScript', icon: '❗' },
-    { name: 'Stimulus', language: 'JavaScript', icon: '💡' },
+    { name: 'Node.js', language: 'JavaScript', icon: '/icons/node.js.svg' },
+    { name: 'Python', language: 'Python', icon: '/icons/python.svg' },
+    { name: 'Ruby', language: 'Ruby', icon: '/icons/ruby.png' },
+    { name: 'Java', language: 'Java', icon: '/icons/java.svg' },
+    { name: 'Go', language: 'Go', icon: '/icons/go.svg' },
+    { name: 'PHP', language: 'PHP', icon: '/icons/php.svg' },
   ],
   Backend: [
-    { name: 'Node.js', language: 'JavaScript', icon: '🟩' },
-    { name: 'Python', language: 'Python', icon: '🐍' },
-    { name: 'Ruby', language: 'Ruby', icon: '💎' },
-    { name: 'Java', language: 'Java', icon: '☕' },
-    { name: 'Go', language: 'Go', icon: '🐹' },
-    { name: 'PHP', language: 'PHP', icon: '🐘' },
+    { name: 'Echo', language: 'JavaScript', icon: '/icons/echo.svg' },
+    { name: 'Chi', language: 'JavaScript', icon: '/icons/chi.svg' },
+    { name: 'Iris', language: 'TypeScript', icon: '/icons/iris.svg' },
+    { name: 'Gin', language: 'Go', icon: '/icons/gin.svg' },
+    { name: 'vert.x', language: 'Go', icon: '/icons/vert.x.svg' },
+    { name: 'Spring Boot', language: 'Java', icon: '/icons/spring-boot.svg' },
+    { name: 'Django', language: 'Python', icon: '/icons/django.svg' },
+    { name: 'Flask', language: 'Python', icon: '/icons/flask.svg' },
+    { name: 'Rocket', language: 'Rust', icon: '/icons/rocket.svg' },
+    {
+      name: 'Express.js',
+      language: 'JavaScript',
+      icon: '/icons/express.js.svg',
+    },
   ],
-  Fullstack: [
-    { name: 'Next.js', language: 'JavaScript', icon: '▲' },
-    { name: 'Nuxt', language: 'JavaScript', icon: '🟩' },
-    { name: 'SvelteKit', language: 'JavaScript', icon: '🔥' },
-    { name: 'Remix', language: 'JavaScript', icon: '💿' },
-    { name: 'Blitz', language: 'TypeScript', icon: '⚡' },
-    { name: 'Redwood', language: 'JavaScript', icon: '🌲' },
+  Frontend: [
+    { name: 'Next.js', language: 'JavaScript', icon: '/icons/next.js.svg' },
+    { name: 'React', language: 'JavaScript', icon: '/icons/react.svg' },
+    { name: 'Vue', language: 'JavaScript', icon: '/icons/vue.svg' },
+    { name: 'Angular', language: 'JavaScript', icon: '/icons/angular.svg' },
+    { name: 'nuxt3', language: 'JavaScript', icon: '/icons/nuxt3.svg' },
+    { name: 'Umi', language: 'JavaScript', icon: '/icons/umi.svg' },
+    { name: 'SvelteKit', language: 'JavaScript', icon: '/icons/svelte.svg' },
   ],
-  Creative: [
-    { name: 'Three.js', language: 'JavaScript', icon: '3️⃣' },
-    { name: 'P5.js', language: 'JavaScript', icon: '🎨' },
-    { name: 'D3.js', language: 'JavaScript', icon: '📊' },
-    { name: 'Processing', language: 'Java', icon: '🖌️' },
-    { name: 'Unity', language: 'C#', icon: '🎮' },
-    { name: 'Unreal Engine', language: 'C++', icon: '🌟' },
-  ],
-  'Docs, Blogs & Slides': [
-    { name: 'Docusaurus', language: 'JavaScript', icon: '📘' },
-    { name: 'VuePress', language: 'JavaScript', icon: '📗' },
-    { name: 'Gatsby', language: 'JavaScript', icon: '🚀' },
-    { name: 'Hugo', language: 'Go', icon: '🦸' },
-    { name: 'Jekyll', language: 'Ruby', icon: '💎' },
-    { name: 'Reveal.js', language: 'JavaScript', icon: '🎭' },
-  ],
-  'Mobile & VR': [
-    { name: 'React Native', language: 'JavaScript', icon: '📱' },
-    { name: 'Flutter', language: 'Dart', icon: '🐦' },
-    { name: 'Ionic', language: 'TypeScript', icon: '🔷' },
-    { name: 'A-Frame', language: 'JavaScript', icon: '🥽' },
-    { name: 'Xamarin', language: 'C#', icon: '🔵' },
-    { name: 'SwiftUI', language: 'Swift', icon: '🍎' },
-  ],
-  Vanilla: [
-    { name: 'JavaScript', language: 'JavaScript', icon: '🟨' },
-    { name: 'TypeScript', language: 'TypeScript', icon: '🔷' },
-    { name: 'HTML', language: 'HTML', icon: '🌐' },
-    { name: 'CSS', language: 'CSS', icon: '🎨' },
-    { name: 'WebAssembly', language: 'WebAssembly', icon: '🧩' },
-    { name: 'Web Components', language: 'JavaScript', icon: '🧱' },
+
+  'Docs, Blogs': [
+    {
+      name: 'Docusaurus',
+      language: 'JavaScript',
+      icon: '/icons/docusaurus.svg',
+    },
+    { name: 'VuePress', language: 'JavaScript', icon: '/icons/vuepress.svg' },
+    { name: 'Gatsby', language: 'JavaScript', icon: '/icons/gatsby.svg' },
+    { name: 'Hugo', language: 'Go', icon: '/icons/hugo.svg' },
+    { name: 'Jekyll', language: 'Ruby', icon: '/icons/jekyll.png' },
+    { name: 'Reveal.js', language: 'JavaScript', icon: '/icons/reveal.js.svg' },
   ],
   'Native Languages': [
-    { name: 'C++', language: 'C++', icon: '🔨' },
-    { name: 'Rust', language: 'Rust', icon: '🦀' },
-    { name: 'Go', language: 'Go', icon: '🐹' },
-    { name: 'Java', language: 'Java', icon: '☕' },
-    { name: 'C#', language: 'C#', icon: '🔷' },
-    { name: 'Kotlin', language: 'Kotlin', icon: '🟣' },
+    { name: 'C++', language: 'C++', icon: '/icons/c++.svg' },
+    { name: 'Rust', language: 'Rust', icon: '/icons/rust.svg' },
+    { name: 'Go', language: 'Go', icon: '/icons/go.svg' },
+    { name: 'Java', language: 'Java', icon: '/icons/java.svg' },
+    { name: 'C#', language: 'C#', icon: '/icons/csharp.svg' },
+    { name: 'Kotlin', language: 'Kotlin', icon: '/icons/kotlin.svg' },
   ],
 };
 
@@ -128,14 +108,21 @@ export default function TechGrid() {
                   '0px 12px 40px -25px rgba(6, 26, 65, 0.20), 0px 0px 1px 0px rgba(19, 51, 107, 0.20)',
               }}
             >
-              <div className="size-7 text-4xl lg:size-10">{tech.icon}</div>
-              <div>
-                <h3 className="mb-1 text-xs font-medium text-black lg:text-lg">
+              <div className="relative flex size-7 items-center justify-center text-4xl lg:size-10">
+                <Image
+                  src={tech.icon}
+                  alt={tech.name}
+                  fill
+                  className="size-7 lg:size-10"
+                />
+              </div>
+              <div className="flex items-center justify-center">
+                <h3 className="text-xs font-medium text-black lg:text-lg">
                   {tech.name}
                 </h3>
-                <p className="text-[8px] text-custom-secondary-text lg:text-xs">
+                {/* <p className="text-[8px] text-custom-secondary-text lg:text-xs">
                   {tech.language}
-                </p>
+                </p> */}
               </div>
             </div>
           ))}

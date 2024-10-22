@@ -1,36 +1,14 @@
 'use client';
 
+import { HeaderLinks } from '@/app/layout.config';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 import Link from 'fumadocs-core/link';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
 import { GetStartedButton } from '../ui/shiny-button';
-
-const links = [
-  {
-    text: 'App Store',
-    url: 'https://template.usw.sailos.io',
-  },
-  {
-    text: 'Docs',
-    url: '/en/docs',
-  },
-  {
-    text: 'Pricing',
-    url: '/pricing',
-  },
-  {
-    text: 'Blog',
-    url: '/blog',
-  },
-  {
-    text: 'Contact',
-    url: '/contact',
-  },
-];
 
 export default function Header({ lang }: { lang: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -69,7 +47,7 @@ export default function Header({ lang }: { lang: string }) {
               </span>
             </Link>
             <div className="hidden items-center gap-x-5 text-sm font-medium lg:flex">
-              {links.map((link) => (
+              {HeaderLinks.map((link) => (
                 <Link
                   key={link.text}
                   href={link.url}
@@ -138,7 +116,7 @@ export default function Header({ lang }: { lang: string }) {
                     </div>
 
                     <div className="flex flex-col gap-y-2">
-                      {links.map((link) => (
+                      {HeaderLinks.map((link) => (
                         <Link
                           key={link.text}
                           href={link.url}

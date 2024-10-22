@@ -36,7 +36,7 @@ const features2 = [
   {
     title: 'Unparalleled Performance',
     description:
-      'Our proprietary lightweight load balancer manages large-scale clusters with up to tens of thousands of nodes, delivering exceptional performance.',
+      'Achieve outstanding performance on our large-scale clusters, all managed by our lightweight, tailored load balancer capable of handling tens of thousands of nodes.',
     icon: '🚀',
     image: '/images/foundation-2-2.svg',
   },

@@ -46,3 +46,26 @@ export function getOptionsForLanguage(
 ): HomeLayoutProps {
   return baseOptions[lang];
 }
+
+export const HeaderLinks = [
+  {
+    text: 'App Store',
+    url: 'https://template.usw.sailos.io',
+  },
+  {
+    text: 'Docs',
+    url: '/en/docs',
+  },
+  // {
+  //   text: 'Pricing',
+  //   url: '/pricing',
+  // },
+  // {
+  //   text: 'Blog',
+  //   url: '/blog',
+  // },
+  {
+    text: 'Contact',
+    url: '/contact',
+  },
+];
