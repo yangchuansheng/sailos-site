@@ -30,8 +30,6 @@ export default function Video() {
   };
 
   useEffect(() => {
-    console.log(playerRef.current);
-
     if (playerRef.current) {
       playerRef.current.getInternalPlayer()?.load();
     }

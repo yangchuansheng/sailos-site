@@ -5,6 +5,7 @@ import TechGrid from '@/components/feature/techgrid';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import Hero from '@/components/header/hero';
+import { TailwindIndicator } from '@/components/tailwind-indicator';
 
 export default function HomePage({ params }: { params: { lang: string } }) {
   return (
@@ -19,6 +20,7 @@ export default function HomePage({ params }: { params: { lang: string } }) {
       </main>
       <div className="mt-[140px] h-[1px] bg-[#DDE7F7]"></div>
       <Footer />
+      <TailwindIndicator />
     </div>
   );
 }

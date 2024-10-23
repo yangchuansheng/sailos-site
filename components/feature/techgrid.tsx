@@ -61,7 +61,7 @@ const mockData = {
 };
 
 export default function TechGrid() {
-  const [activeTab, setActiveTab] = useState('Frontend');
+  const [activeTab, setActiveTab] = useState('Backend');
 
   const handleTabChange = useCallback((tab: string) => {
     setActiveTab(tab);

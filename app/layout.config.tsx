@@ -1,5 +1,6 @@
-import { type HomeLayoutProps } from 'fumadocs-ui/home-layout';
+import { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import { LANGUAGES } from './i18n';
+import Image from 'next/image';
 /**
  * Shared layout configurations
  *
@@ -7,12 +8,18 @@ import { LANGUAGES } from './i18n';
  * Home Layout: app/(home)/layout.tsx
  * Docs Layout: app/docs/layout.tsx
  */
-export const baseOptions: Record<(typeof LANGUAGES)[number], HomeLayoutProps> =
+export const baseOptions: Record<(typeof LANGUAGES)[number], BaseLayoutProps> =
   {
     en: {
       i18n: true,
+      disableThemeSwitch: true,
       nav: {
-        title: 'Sailos',
+        title: (
+          <div className="flex items-center gap-1">
+            <Image alt="Sailos" src="/logo.svg" width={24} height={24} />
+            <span className="hidden text-base font-bold md:block">Sailos</span>
+          </div>
+        ),
         url: '/en',
       },
       githubUrl: 'https://github.com/zjy365/sailos-site',
@@ -26,8 +33,14 @@ export const baseOptions: Record<(typeof LANGUAGES)[number], HomeLayoutProps> =
     },
     zh: {
       i18n: true,
+      disableThemeSwitch: true,
       nav: {
-        title: 'Sailos-zh',
+        title: (
+          <div className="flex items-center gap-1">
+            <Image alt="Sailos" src="/logo.svg" width={24} height={24} />
+            <span className="hidden text-base font-bold md:block">Sailos</span>
+          </div>
+        ),
         url: '/zh',
       },
       githubUrl: 'https://github.com/zjy365/sailos-site',
@@ -43,7 +56,7 @@ export const baseOptions: Record<(typeof LANGUAGES)[number], HomeLayoutProps> =
 
 export function getOptionsForLanguage(
   lang: (typeof LANGUAGES)[number],
-): HomeLayoutProps {
+): BaseLayoutProps {
   return baseOptions[lang];
 }
 

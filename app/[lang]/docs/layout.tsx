@@ -1,10 +1,9 @@
 import { locales } from '@/app/i18n';
+import { getOptionsForLanguage } from '@/app/layout.config';
 import { source } from '@/app/source';
 import { I18nProvider } from 'fumadocs-ui/i18n';
-import { DocsLayout } from 'fumadocs-ui/layout';
-import { RootProvider } from 'fumadocs-ui/provider';
+import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import type { ReactNode } from 'react';
-import { getOptionsForLanguage } from '@/app/layout.config';
 
 interface LayoutProps {
   params: { lang: string };
@@ -24,14 +23,12 @@ export default function Layout({ children, params }: LayoutProps) {
         }[params.lang]
       }
     >
-      <RootProvider>
-        <DocsLayout
-          tree={source.pageTree[params.lang]}
-          {...getOptionsForLanguage(params.lang)}
-        >
-          {children}
-        </DocsLayout>
-      </RootProvider>
+      <DocsLayout
+        tree={source.pageTree[params.lang]}
+        {...getOptionsForLanguage(params.lang)}
+      >
+        {children}
+      </DocsLayout>
     </I18nProvider>
   );
 }
