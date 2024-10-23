@@ -19,7 +19,7 @@ const StickyScroll = ({
   const [activeCard, setActiveCard] = useState(0);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ['start start', 'end start'],
+    offset: ['0px 200px', 'end center'],
   });
 
   const cardLength = content.length;
@@ -31,7 +31,6 @@ const StickyScroll = ({
   ];
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    console.log(latest, 'v');
     for (let i = 0; i < activeRanges.length; i++) {
       // console.log(latest, activeRanges[i][0], activeRanges[i][1]);
       if (latest >= activeRanges[i][0] && latest < activeRanges[i][1]) {
@@ -46,7 +45,7 @@ const StickyScroll = ({
       ref={targetRef}
       className="relative flex justify-between gap-16"
     >
-      <div className="basis-2/5 space-y-16 py-20 ">
+      <div className="basis-2/5 space-y-24 py-20 ">
         {content.map((item, index) => (
           <motion.div
             key={item.title + index}
