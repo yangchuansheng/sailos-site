@@ -16,7 +16,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.1",
     "fumadocs-core": "14.0.0",
-    "fumadocs-mdx": "10.0.2",
+    "fumadocs-mdx": "^11.1.0",
     "fumadocs-ui": "14.0.0",
     "lucide-react": "^0.451.0",
     "next": "^14.2.8",
@@ -24,6 +24,7 @@
     "react-dom": "^18.3.1",
     "react-player": "^2.16.0",
     "react-responsive": "^10.0.0",
+    "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
