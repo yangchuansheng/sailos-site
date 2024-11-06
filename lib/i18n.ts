@@ -5,6 +5,7 @@ export const LANGUAGES = ['en', 'zh'];
 export const i18n: I18nConfig = {
   defaultLanguage: 'en',
   languages: LANGUAGES,
+  hideLocale: 'default-locale',
 };
 
 export const locales = [
